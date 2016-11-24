@@ -1,12 +1,12 @@
 # Laravel-Modules
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/nwidart/laravel-modules.svg?style=flat-square)](https://packagist.org/packages/nwidart/laravel-modules)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/llama-laravel/modules.svg?style=flat-square)](https://packagist.org/packages/llama-laravel/modules)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/nWidart/laravel-modules/master.svg?style=flat-square)](https://travis-ci.org/nWidart/laravel-modules)
-[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/nWidart/laravel-modules.svg?maxAge=86400&style=flat-square)](https://scrutinizer-ci.com/g/nWidart/laravel-modules/?branch=master)
+[![Build Status](https://img.shields.io/travis/llama-laravel/modules/master.svg?style=flat-square)](https://travis-ci.org/llama-laravel/modules)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/llama-laravel/modules.svg?maxAge=86400&style=flat-square)](https://scrutinizer-ci.com/g/llama-laravel/modules/?branch=master)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/25320a08-8af4-475e-a23e-3321f55bf8d2.svg?style=flat-square)](https://insight.sensiolabs.com/projects/25320a08-8af4-475e-a23e-3321f55bf8d2)
-[![Quality Score](https://img.shields.io/scrutinizer/g/nWidart/laravel-modules.svg?style=flat-square)](https://scrutinizer-ci.com/g/nWidart/laravel-modules)
-[![Total Downloads](https://img.shields.io/packagist/dt/nwidart/laravel-modules.svg?style=flat-square)](https://packagist.org/packages/nwidart/laravel-modules)
+[![Quality Score](https://img.shields.io/scrutinizer/g/llama-laravel/modules.svg?style=flat-square)](https://scrutinizer-ci.com/g/llama-laravel/modules)
+[![Total Downloads](https://img.shields.io/packagist/dt/llama-laravel/modules.svg?style=flat-square)](https://packagist.org/packages/llama-laravel/modules)
 
 
 - [Upgrade Guide](#upgrade-guide)
@@ -21,7 +21,7 @@
 - [Auto Scan Vendor Directory](#auto-scan-vendor-directory)
 - [Publishing Modules](#publishing-modules)
 
-`nwidart/laravel-modules` is a laravel package which created to manage your large laravel app using modules. Module is like a laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 5.
+`llama-laravel/modules` is a laravel package which created to manage your large laravel app using modules. Module is like a laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 5.
 
 This package is a re-published, re-organised and maintained version of [pingpong/modules](https://github.com/pingpong-labs/modules), which isn't maintained anymore. This package is used in [AsgardCMS](https://asgardcms.com/).
 
@@ -40,7 +40,7 @@ Find out why you should use this package in the article: [Writing modular applic
 To install through composer, simply run the following command:
 
 ``` bash
-composer require nwidart/laravel-modules
+composer require llama-laravel/modules
 ```
 
 #### Add Service Provider
@@ -49,7 +49,7 @@ Next add the following service provider in `config/app.php`.
 
 ```php
 'providers' => [
-  Nwidart\Modules\LaravelModulesServiceProvider::class,
+  Llama\Modules\LaravelModulesServiceProvider::class,
 ],
 ```
 
@@ -57,14 +57,14 @@ Next, add the following aliases to `aliases` array in the same file.
 
 ```php
 'aliases' => [
-  'Module' => Nwidart\Modules\Facades\Module::class,
+  'Module' => Llama\Modules\Facades\Module::class,
 ],
 ```
 
 Next publish the package's configuration file by running :
 
 ```
-php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+php artisan vendor:publish --provider="Llama\Modules\LaravelModulesServiceProvider"
 ```
 
 #### Autoloading
@@ -75,8 +75,7 @@ By default controllers, entities or repositories are not loaded automatically. Y
 {
   "autoload": {
     "psr-4": {
-      "App\\": "app/",
-      "Modules\\": "Modules/"
+      "App\\": "app/"
     }
   }
 }
@@ -407,7 +406,7 @@ Module::find('name');
 Module::get('name');
 ```
 
-Find a module, if there is one, return the `Module` instance, otherwise throw `Nwidart\Modules\Exeptions\ModuleNotFoundException`.
+Find a module, if there is one, return the `Module` instance, otherwise throw `Llama\Modules\Exeptions\ModuleNotFoundException`.
 
 ```php
 Module::findOrFail('module-name');
@@ -532,7 +531,7 @@ Module::asset('blog:img/logo.img');
 Install the specified module by given module name.
 
 ```php
-Module::install('nwidart/hello');
+Module::install('Llama/hello');
 ```
 
 Update dependencies for the specified module.
@@ -665,13 +664,12 @@ Submit to packagist is very easy, just give your github repository, click submit
 
 ## Credits
 
-- [Nicolas Widart](https://github.com/nwidart)
-- [gravitano](https://github.com/gravitano)
+- [XuaNguyen](https://github.com/xuanhoa88)
 - [All Contributors](../../contributors)
 
-## About Nicolas Widart
+## About XuaNguyen
 
-Nicolas Widart is a freelance web developer specialising on the laravel framework. View all my packages [on my website](https://nicolaswidart.com/projects).
+XuaNguyen is a freelance web developer specialising on the laravel framework.
 
 
 ## License
