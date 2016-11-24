@@ -1,20 +1,19 @@
 {
-  "name": "nwidart/laravel-modules",
-  "description": "Laravel Module management",
+  "name": "llama-laravel/modules",
+  "description": "Laravel Module Management",
   "keywords": [
     "modules",
     "laravel",
-    "nwidart",
+    "llama",
     "module",
     "rad"
   ],
   "license": "MIT",
   "authors": [
     {
-      "name": "Nicolas Widart",
-      "email": "n.widart@gmail.com",
-      "homepage": "https://nicolaswidart.com",
-      "role": "Developer"
+      "name": "XuaNguyen",
+      "email": "xuan.0211@gmail.com"
+      "role": "Dev"
     }
   ],
   "require": {
@@ -31,12 +30,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Nwidart\\Modules\\": "src"
+      "Llama\\Modules\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Nwidart\\Modules\\Tests\\": "tests"
+      "Llama\\Modules\\Tests\\": "tests"
     }
   },
   "minimum-stability": "dev",
