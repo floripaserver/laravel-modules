@@ -49,7 +49,7 @@ Next add the following service provider in `config/app.php`.
 
 ```php
 'providers' => [
-  Llama\Modules\LaravelModulesServiceProvider::class,
+  Llama\Modules\ServiceProvider::class,
 ],
 ```
 
