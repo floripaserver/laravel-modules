@@ -8,7 +8,7 @@ use Nwidart\Modules\Providers\ConsoleServiceProvider;
 use Nwidart\Modules\Providers\ContractsServiceProvider;
 use Nwidart\Modules\Support\Stub;
 
-class LaravelModulesServiceProvider extends ServiceProvider
+class ModulesServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
