@@ -3,9 +3,8 @@
 namespace Llama\Modules;
 
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Collection as BaseCollection;
 
-class Collection extends BaseCollection
+class Collection extends \Illuminate\Support\Collection
 {
     /**
      * Get items collections.
