@@ -1,40 +1,40 @@
 <?php
 
-namespace Nwidart\Modules\Providers;
+namespace Llama\Modules\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Nwidart\Modules\Commands\CommandCommand;
-use Nwidart\Modules\Commands\ControllerCommand;
-use Nwidart\Modules\Commands\DisableCommand;
-use Nwidart\Modules\Commands\DumpCommand;
-use Nwidart\Modules\Commands\EnableCommand;
-use Nwidart\Modules\Commands\GenerateEventCommand;
-use Nwidart\Modules\Commands\GenerateJobCommand;
-use Nwidart\Modules\Commands\GenerateListenerCommand;
-use Nwidart\Modules\Commands\GenerateMailCommand;
-use Nwidart\Modules\Commands\GenerateMiddlewareCommand;
-use Nwidart\Modules\Commands\GenerateNotificationCommand;
-use Nwidart\Modules\Commands\GenerateProviderCommand;
-use Nwidart\Modules\Commands\GenerateRouteProviderCommand;
-use Nwidart\Modules\Commands\InstallCommand;
-use Nwidart\Modules\Commands\ListCommand;
-use Nwidart\Modules\Commands\MakeCommand;
-use Nwidart\Modules\Commands\MakeRequestCommand;
-use Nwidart\Modules\Commands\MigrateCommand;
-use Nwidart\Modules\Commands\MigrateRefreshCommand;
-use Nwidart\Modules\Commands\MigrateResetCommand;
-use Nwidart\Modules\Commands\MigrateRollbackCommand;
-use Nwidart\Modules\Commands\MigrationCommand;
-use Nwidart\Modules\Commands\ModelCommand;
-use Nwidart\Modules\Commands\PublishCommand;
-use Nwidart\Modules\Commands\PublishConfigurationCommand;
-use Nwidart\Modules\Commands\PublishMigrationCommand;
-use Nwidart\Modules\Commands\PublishTranslationCommand;
-use Nwidart\Modules\Commands\SeedCommand;
-use Nwidart\Modules\Commands\SeedMakeCommand;
-use Nwidart\Modules\Commands\SetupCommand;
-use Nwidart\Modules\Commands\UpdateCommand;
-use Nwidart\Modules\Commands\UseCommand;
+use Llama\Modules\Commands\CommandCommand;
+use Llama\Modules\Commands\ControllerCommand;
+use Llama\Modules\Commands\DisableCommand;
+use Llama\Modules\Commands\DumpCommand;
+use Llama\Modules\Commands\EnableCommand;
+use Llama\Modules\Commands\GenerateEventCommand;
+use Llama\Modules\Commands\GenerateJobCommand;
+use Llama\Modules\Commands\GenerateListenerCommand;
+use Llama\Modules\Commands\GenerateMailCommand;
+use Llama\Modules\Commands\GenerateMiddlewareCommand;
+use Llama\Modules\Commands\GenerateNotificationCommand;
+use Llama\Modules\Commands\GenerateProviderCommand;
+use Llama\Modules\Commands\GenerateRouteProviderCommand;
+use Llama\Modules\Commands\InstallCommand;
+use Llama\Modules\Commands\ListCommand;
+use Llama\Modules\Commands\MakeCommand;
+use Llama\Modules\Commands\MakeRequestCommand;
+use Llama\Modules\Commands\MigrateCommand;
+use Llama\Modules\Commands\MigrateRefreshCommand;
+use Llama\Modules\Commands\MigrateResetCommand;
+use Llama\Modules\Commands\MigrateRollbackCommand;
+use Llama\Modules\Commands\MigrationCommand;
+use Llama\Modules\Commands\ModelCommand;
+use Llama\Modules\Commands\PublishCommand;
+use Llama\Modules\Commands\PublishConfigurationCommand;
+use Llama\Modules\Commands\PublishMigrationCommand;
+use Llama\Modules\Commands\PublishTranslationCommand;
+use Llama\Modules\Commands\SeedCommand;
+use Llama\Modules\Commands\SeedMakeCommand;
+use Llama\Modules\Commands\SetupCommand;
+use Llama\Modules\Commands\UpdateCommand;
+use Llama\Modules\Commands\UseCommand;
 
 class ConsoleServiceProvider extends ServiceProvider
 {

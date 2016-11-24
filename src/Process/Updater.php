@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Process;
+namespace Llama\Modules\Process;
 
 class Updater extends Runner
 {

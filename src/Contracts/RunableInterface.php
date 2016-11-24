@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Contracts;
+namespace Llama\Modules\Contracts;
 
 interface RunableInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Facades;
+namespace Llama\Modules\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

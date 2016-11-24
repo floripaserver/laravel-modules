@@ -1,13 +1,13 @@
 <?php
 
-namespace Nwidart\Modules\Commands;
+namespace Llama\Modules\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use RuntimeException;
-use Nwidart\Modules\Module;
-use Nwidart\Modules\Repository;
-use Nwidart\Modules\Traits\ModuleCommandTrait;
+use Llama\Modules\Module;
+use Llama\Modules\Repository;
+use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

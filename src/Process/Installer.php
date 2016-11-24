@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Process;
+namespace Llama\Modules\Process;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Nwidart\Modules\Repository;
+use Llama\Modules\Repository;
 use Symfony\Component\Process\Process;
 
 class Installer
@@ -26,7 +26,7 @@ class Installer
     /**
      * The module repository instance.
      *
-     * @var \Nwidart\Modules\Repository
+     * @var \Llama\Modules\Repository
      */
     protected $repository;
 
@@ -84,7 +84,7 @@ class Installer
     /**
      * Set the module repository instance.
      *
-     * @param \Nwidart\Modules\Repository $repository
+     * @param \Llama\Modules\Repository $repository
      *
      * @return $this
      */

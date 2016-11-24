@@ -24,7 +24,7 @@ return [
 
     'stubs' => [
         'enabled' => false,
-        'path' => base_path() . '/vendor/nwidart/laravel-modules/src/Commands/stubs',
+        'path' => base_path(__DIR__ . '/../src/Commands/stubs'),
         'files' => [
             'start' => 'start.php',
             'routes' => 'Http/routes.php',
@@ -62,7 +62,7 @@ return [
         |
         */
 
-        'modules' => base_path('Modules'),
+        'modules' => base_path('app/Modules'),
         /*
         |--------------------------------------------------------------------------
         | Modules assets path
@@ -143,8 +143,8 @@ return [
     'composer' => [
         'vendor' => 'nwidart',
         'author' => [
-            'name' => 'Nicolas Widart',
-            'email' => 'n.widart@gmail.com',
+            'name' => 'XuaNguyen',
+            'email' => 'xuan.0211@gmail.com',
         ],
     ],
     /*
@@ -157,7 +157,7 @@ return [
     */
     'cache' => [
         'enabled' => false,
-        'key' => 'laravel-modules',
+        'key' => 'llama-laravel-modules',
         'lifetime' => 60,
     ],
     /*

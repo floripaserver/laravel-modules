@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Llama\Modules;
 
 use Illuminate\Filesystem\Filesystem;
 

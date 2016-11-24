@@ -1,11 +1,11 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Llama\Modules;
 
-use Nwidart\Modules\Providers\BootstrapServiceProvider;
-use Nwidart\Modules\Providers\ConsoleServiceProvider;
-use Nwidart\Modules\Providers\ContractsServiceProvider;
-use Nwidart\Modules\Support\Stub;
+use Llama\Modules\Providers\BootstrapServiceProvider;
+use Llama\Modules\Providers\ConsoleServiceProvider;
+use Llama\Modules\Providers\ContractsServiceProvider;
+use Llama\Modules\Support\Stub;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {

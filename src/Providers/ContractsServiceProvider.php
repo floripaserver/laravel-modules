@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Providers;
+namespace Llama\Modules\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Repository;
+use Llama\Modules\Contracts\RepositoryInterface;
+use Llama\Modules\Repository;
 
 class ContractsServiceProvider extends ServiceProvider
 {

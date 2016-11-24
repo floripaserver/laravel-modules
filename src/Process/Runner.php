@@ -1,23 +1,23 @@
 <?php
 
-namespace Nwidart\Modules\Process;
+namespace Llama\Modules\Process;
 
-use Nwidart\Modules\Contracts\RunableInterface;
-use Nwidart\Modules\Repository;
+use Llama\Modules\Contracts\RunableInterface;
+use Llama\Modules\Repository;
 
 class Runner implements RunableInterface
 {
     /**
      * The module instance.
      *
-     * @var \Nwidart\Modules\Repository
+     * @var \Llama\Modules\Repository
      */
     protected $module;
 
     /**
      * The constructor.
      *
-     * @param \Nwidart\Modules\Repository $module
+     * @param \Llama\Modules\Repository $module
      */
     public function __construct(Repository $module)
     {

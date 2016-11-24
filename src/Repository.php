@@ -1,14 +1,14 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Llama\Modules;
 
 use Countable;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Str;
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Exceptions\ModuleNotFoundException;
-use Nwidart\Modules\Process\Installer;
-use Nwidart\Modules\Process\Updater;
+use Llama\Modules\Contracts\RepositoryInterface;
+use Llama\Modules\Exceptions\ModuleNotFoundException;
+use Llama\Modules\Process\Installer;
+use Llama\Modules\Process\Updater;
 
 class Repository implements RepositoryInterface, Countable
 {

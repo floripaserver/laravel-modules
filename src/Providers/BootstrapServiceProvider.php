@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Providers;
+namespace Llama\Modules\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
