@@ -47,9 +47,9 @@ return [
                 'VENDOR',
                 'AUTHOR_NAME',
                 'AUTHOR_EMAIL',
-                'MODULE_NAMESPACE',
-            ],
-        ],
+                'MODULE_NAMESPACE'
+            ]
+        ]
     ],
     'paths' => [
         /*
@@ -112,7 +112,7 @@ return [
             'test' => 'Tests',
             'jobs' => 'Jobs',
             'emails' => 'Emails',
-            'notifications' => 'Notifications',
+            'notifications' => 'Notifications'
         ],
     ],
     /*
@@ -128,8 +128,8 @@ return [
     'scan' => [
         'enabled' => false,
         'paths' => [
-            base_path('vendor/*/*'),
-        ],
+            base_path('vendor/*/*')
+        ]
     ],
     /*
     |--------------------------------------------------------------------------
@@ -144,8 +144,8 @@ return [
         'vendor' => 'llama-laravel-modules',
         'author' => [
             'name' => 'XuaNguyen',
-            'email' => 'xuan.0211@gmail.com',
-        ],
+            'email' => 'xuan.0211@gmail.com'
+        ]
     ],
     /*
     |--------------------------------------------------------------------------
@@ -158,7 +158,7 @@ return [
     'cache' => [
         'enabled' => false,
         'key' => 'llama-laravel-modules',
-        'lifetime' => 60,
+        'lifetime' => 60
     ],
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +168,6 @@ return [
     |--------------------------------------------------------------------------
     */
     'register' => [
-        'translations' => true,
+        'translations' => true
     ],
 ];
