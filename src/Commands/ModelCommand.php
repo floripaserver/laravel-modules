@@ -8,7 +8,7 @@ use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class ModelCommand extends GeneratorCommand
+class ModelCommand extends Command
 {
     use ModuleCommandTrait;
 

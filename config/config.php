@@ -86,6 +86,17 @@ return [
         'migration' => base_path('database/migrations'),
         /*
         |--------------------------------------------------------------------------
+        | The seeds path
+        |--------------------------------------------------------------------------
+        |
+        | Where you run 'module:publish-seed' command, where do you publish the
+        | the seed files?
+        |
+        */
+
+        'seed' => base_path('database/seeds'),
+        /*
+        |--------------------------------------------------------------------------
         | Generator path
         |--------------------------------------------------------------------------
         |
@@ -102,9 +113,9 @@ return [
             'migration' => 'Database/Migrations',
             'model' => 'Models',
             'repository' => 'Repositories',
-            'seeder' => 'Database/Seeders',
+            'seed' => 'Database/Seeds',
             'controller' => 'Http/Controllers',
-            'filter' => 'Http/Middleware',
+            'middleware' => 'Http/Middleware',
             'request' => 'Http/Requests',
             'provider' => 'Providers',
             'lang' => 'Resources/lang',

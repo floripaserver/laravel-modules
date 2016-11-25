@@ -87,6 +87,7 @@ By default controllers, entities or repositories are not loaded automatically. Y
 - `modules` - Used for save the generated modules.
 - `assets` - Used for save the modules's assets from each modules.
 - `migration` - Used for save the modules's migrations if you publish the modules's migrations.
+- `seed` - Used for save the modules's seeds if you publish the modules's seeds.
 - `generator` - Used for generate modules folders.
 - `scan` - Used for allow to scan other folders.
 - `enabled` - If `true`, the package will scan other paths. By default the value is `false`
@@ -140,30 +141,29 @@ Because we are autoloading the modules using `psr-4`, we strongly recommend usin
 **Folder Structure**
 
 ```
-laravel-app/
-app/
-bootstrap/
-vendor/
-Modules/
+your-laravel/app/Modules/
   ├── Blog/
-      ├── Assets/
       ├── Config/
       ├── Console/
       ├── Database/
           ├── Migrations/
-          ├── Seeders/
-      ├── Entities/
+          ├── Seeds/
+      ├── Emails/
+      ├── Events/
       ├── Http/
           ├── Controllers/
           ├── Middleware/
           ├── Requests/
           ├── routes.php
+      ├── Jobs/
+      ├── Models/
+      ├── Notifications/
       ├── Providers/
-          ├── BlogServiceProvider.php
+      ├── Repositories/
       ├── Resources/
+          ├── assets/
           ├── lang/
           ├── views/
-      ├── Repositories/
       ├── Tests/
       ├── composer.json
       ├── module.json
@@ -172,6 +172,12 @@ Modules/
 
 <a name="artisan-commands"></a>
 ## Artisan Commands
+
+Setting up modules folders for first use
+
+```
+php artisan module:setup
+```
 
 Create new module.
 
@@ -235,12 +241,6 @@ php artisan module:migrate-reset blog
 php artisan module:migrate-refresh blog
 ```
 
-Create new seed for the specified module.
-
-```
-php artisan module:make-seed users blog
-```
-
 Migrate from the specified module.
 
 ```
@@ -251,6 +251,12 @@ Migrate from all modules.
 
 ```
 php artisan module:migrate
+```
+
+Create new seed for the specified module.
+
+```
+php artisan module:make-seed users blog
 ```
 
 Seed from the specified module.
@@ -274,13 +280,13 @@ php artisan module:make-controller SiteController blog
 Publish assets from the specified module to public directory.
 
 ```
-php artisan module:publish blog
+php artisan module:publish-asset blog
 ```
 
 Publish assets from all modules to public directory.
 
 ```
-php artisan module:publish
+php artisan module:publish-asset
 ```
 
 Create new model for the specified module.
@@ -311,6 +317,22 @@ For all modules.
 
 ```
 php artisan module:publish-migration
+```
+
+Publish seed for the specified module or for all modules.
+
+This helpful when you want to rollback the seeds. You can also run `php artisan db:seed` instead of `php artisan module:seed` command for migrate the seeds.
+
+For the specified module.
+
+```
+php artisan module:publish-seed blog
+```
+
+For all modules.
+
+```
+php artisan module:publish-seed
 ```
 
 Publish Module configuration files
@@ -525,7 +547,7 @@ Module::getAssetsPath();
 Get asset url from specific module.
 
 ```php
-Module::asset('blog:img/logo.img');
+Module::asset('blog::img/logo.img');
 ```
 
 Install the specified module by given module name.

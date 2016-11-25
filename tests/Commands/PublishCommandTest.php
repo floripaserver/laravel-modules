@@ -4,7 +4,7 @@ namespace Llama\Modules\tests\Commands;
 
 use Llama\Modules\Tests\BaseTestCase;
 
-class PublishCommandTest extends BaseTestCase
+class PublishAssetCommandTest extends BaseTestCase
 {
     /**
      * @var \Illuminate\Filesystem\Filesystem

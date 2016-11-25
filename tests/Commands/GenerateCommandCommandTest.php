@@ -4,7 +4,7 @@ namespace Llama\Modules\tests\Commands;
 
 use Llama\Modules\Tests\BaseTestCase;
 
-class GenerateCommandCommandTest extends BaseTestCase
+class GenerateMakeCommandCommandTest extends BaseTestCase
 {
     /**
      * @var \Illuminate\Filesystem\Filesystem

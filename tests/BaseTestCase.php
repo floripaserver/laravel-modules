@@ -47,17 +47,17 @@ abstract class BaseTestCase extends OrchestraTestCase
             'assets' => public_path('modules'),
             'migration' => base_path('database/migrations'),
             'generator' => [
-                'assets' => 'Assets',
+                'assets' => 'Resources/assets',
                 'config' => 'Config',
                 'command' => 'Console',
                 'event' => 'Events',
                 'listener' => 'Events/Handlers',
                 'migration' => 'Database/Migrations',
-                'model' => 'Entities',
+                'model' => 'Models',
                 'repository' => 'Repositories',
-                'seeder' => 'Database/Seeders',
+                'seed' => 'Database/Seeds',
                 'controller' => 'Http/Controllers',
-                'filter' => 'Http/Middleware',
+                'middleware' => 'Http/Middleware',
                 'request' => 'Http/Requests',
                 'provider' => 'Providers',
                 'lang' => 'Resources/lang',
@@ -65,6 +65,7 @@ abstract class BaseTestCase extends OrchestraTestCase
                 'test' => 'Tests',
                 'jobs' => 'Jobs',
                 'emails' => 'Emails',
+                'notifications' => 'Notifications'
             ],
         ]);
     }

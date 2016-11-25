@@ -7,7 +7,7 @@ use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class GenerateEventCommand extends GeneratorCommand
+class GenerateEventCommand extends Command
 {
     use ModuleCommandTrait;
 

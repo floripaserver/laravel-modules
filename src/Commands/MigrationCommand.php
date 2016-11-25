@@ -10,7 +10,7 @@ use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class MigrationCommand extends GeneratorCommand
+class MigrationCommand extends Command
 {
     use ModuleCommandTrait;
 

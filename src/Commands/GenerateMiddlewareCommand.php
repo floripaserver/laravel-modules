@@ -7,7 +7,7 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 
-class GenerateMiddlewareCommand extends GeneratorCommand
+class GenerateMiddlewareCommand extends Command
 {
     use ModuleCommandTrait;
 
@@ -70,7 +70,7 @@ class GenerateMiddlewareCommand extends GeneratorCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $seederPath = $this->laravel['modules']->config('paths.generator.filter');
+        $seederPath = $this->laravel['modules']->config('paths.generator.middleware');
 
         return $path . $seederPath . '/' . $this->getFileName() . '.php';
     }

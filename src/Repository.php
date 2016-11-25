@@ -478,7 +478,7 @@ class Repository implements RepositoryInterface, Countable
      */
     public function asset($asset)
     {
-        list($name, $url) = explode(':', $asset);
+        list($name, $url) = explode('::', $asset);
 
         $baseUrl = str_replace(public_path() . DIRECTORY_SEPARATOR, '', $this->getAssetsPath());
 

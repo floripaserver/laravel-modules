@@ -6,7 +6,7 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 
-class GenerateRouteProviderCommand extends GeneratorCommand
+class GenerateRouteProviderCommand extends Command
 {
     use ModuleCommandTrait;
 

@@ -2,11 +2,10 @@
 
 namespace Llama\Modules\Commands;
 
-use Illuminate\Console\Command;
 use Llama\Modules\Exceptions\FileAlreadyExistException;
 use Llama\Modules\Generators\FileGenerator;
 
-abstract class GeneratorCommand extends Command
+abstract class Command extends Illuminate\Console\Command
 {
     /**
      * The name of 'name' argument.

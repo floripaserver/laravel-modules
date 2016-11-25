@@ -3,7 +3,7 @@
 namespace Llama\Modules\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Llama\Modules\Commands\CommandCommand;
+use Llama\Modules\Commands\MakeCommandCommand;
 use Llama\Modules\Commands\MakeControllerCommand;
 use Llama\Modules\Commands\DisableCommand;
 use Llama\Modules\Commands\DumpCommand;
@@ -26,7 +26,7 @@ use Llama\Modules\Commands\MigrateResetCommand;
 use Llama\Modules\Commands\MigrateRollbackCommand;
 use Llama\Modules\Commands\MigrationCommand;
 use Llama\Modules\Commands\ModelCommand;
-use Llama\Modules\Commands\PublishCommand;
+use Llama\Modules\Commands\PublishAssetCommand;
 use Llama\Modules\Commands\PublishConfigurationCommand;
 use Llama\Modules\Commands\PublishMigrationCommand;
 use Llama\Modules\Commands\PublishTranslationCommand;
@@ -35,6 +35,7 @@ use Llama\Modules\Commands\SeedMakeCommand;
 use Llama\Modules\Commands\SetupCommand;
 use Llama\Modules\Commands\UpdateCommand;
 use Llama\Modules\Commands\UseCommand;
+use Llama\Modules\Commands\PublishSeedCommand;
 
 class ConsoleServiceProvider extends ServiceProvider
 {
@@ -47,7 +48,7 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     protected $commands = [
         MakeCommand::class,
-        CommandCommand::class,
+        MakeCommandCommand::class,
         MakeControllerCommand::class,
         DisableCommand::class,
         EnableCommand::class,
@@ -64,7 +65,7 @@ class ConsoleServiceProvider extends ServiceProvider
         MigrateRollbackCommand::class,
         MigrationCommand::class,
         ModelCommand::class,
-        PublishCommand::class,
+        PublishAssetCommand::class,
         PublishMigrationCommand::class,
         PublishTranslationCommand::class,
         SeedCommand::class,
@@ -78,6 +79,7 @@ class ConsoleServiceProvider extends ServiceProvider
         GenerateJobCommand::class,
         GenerateMailCommand::class,
         GenerateNotificationCommand::class,
+        PublishSeedCommand::class
     ];
 
     /**

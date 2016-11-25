@@ -7,14 +7,14 @@ use Llama\Modules\Module;
 use Llama\Modules\Publishing\AssetPublisher;
 use Symfony\Component\Console\Input\InputArgument;
 
-class PublishCommand extends Command
+class PublishAssetCommand extends Command
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'module:publish';
+    protected $name = 'module:publish-asset';
 
     /**
      * The console command description.
