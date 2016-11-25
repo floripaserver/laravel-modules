@@ -64,7 +64,7 @@ Next, add the following aliases to `aliases` array in the same file.
 Next publish the package's configuration file by running :
 
 ```
-php artisan vendor:publish --provider="Llama\Modules\LaravelModulesServiceProvider"
+php artisan vendor:publish --provider="Llama\Modules\ServiceProvider"
 ```
 
 #### Autoloading
