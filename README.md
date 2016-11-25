@@ -187,7 +187,7 @@ php artisan module:make blog
 
 Use the specified module.
 
-```php
+```
 php artisan module:use blog
 ```
 
@@ -335,7 +335,7 @@ For all modules.
 php artisan module:publish-seed
 ```
 
-Publish Module configuration files
+Publish module configuration files
 
 ```
 php artisan module:publish-config <module-name>
@@ -573,49 +573,49 @@ $module = Module::find('blog');
 
 Get module name.
 
-```
+```php
 $module->getName();
 ```
 
 Get module name in lowercase.
 
-```
+```php
 $module->getLowerName();
 ```
 
 Get module name in studlycase.
 
-```
+```php
 $module->getStudlyName();
 ```
 
 Get module path.
 
-```
+```php
 $module->getPath();
 ```
 
 Get extra path.
 
-```
+```php
 $module->getExtraPath('Assets');
 ```
 
 Disable the specified module.
 
-```
+```php
 $module->enable();
 ```
 
 Enable the specified module.
 
-```
+```php
 $module->disable();
 ```
 
 Delete the specified module.
 
-```
+```php
 $module->delete();
 ```
 
