@@ -4,7 +4,7 @@ namespace Llama\Modules\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Llama\Modules\Commands\CommandCommand;
-use Llama\Modules\Commands\ControllerCommand;
+use Llama\Modules\Commands\MakeControllerCommand;
 use Llama\Modules\Commands\DisableCommand;
 use Llama\Modules\Commands\DumpCommand;
 use Llama\Modules\Commands\EnableCommand;
@@ -48,7 +48,7 @@ class ConsoleServiceProvider extends ServiceProvider
     protected $commands = [
         MakeCommand::class,
         CommandCommand::class,
-        ControllerCommand::class,
+        MakeControllerCommand::class,
         DisableCommand::class,
         EnableCommand::class,
         GenerateEventCommand::class,
