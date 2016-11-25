@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\tests\Commands;
+namespace Llama\Modules\tests\Commands;
 
-use Nwidart\Modules\Tests\BaseTestCase;
+use Llama\Modules\Tests\BaseTestCase;
 
 class ModuleGeneratorTest extends BaseTestCase
 {
@@ -92,7 +92,7 @@ class ModuleGeneratorTest extends BaseTestCase
     {
         return <<<TEXT
 {
-    "name": "nwidart/blog",
+    "name": "llama/blog",
     "description": "",
     "authors": [
         {

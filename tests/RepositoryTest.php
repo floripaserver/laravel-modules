@@ -1,12 +1,12 @@
 <?php
 
-namespace Nwidart\Modules\tests;
+namespace Llama\Modules\tests;
 
 use Illuminate\Filesystem\Filesystem;
-use Nwidart\Modules\Collection;
-use Nwidart\Modules\Exceptions\ModuleNotFoundException;
-use Nwidart\Modules\Module;
-use Nwidart\Modules\Repository;
+use Llama\Modules\Collection;
+use Llama\Modules\Exceptions\ModuleNotFoundException;
+use Llama\Modules\Module;
+use Llama\Modules\Repository;
 
 class RepositoryTest extends BaseTestCase
 {
@@ -162,7 +162,7 @@ class RepositoryTest extends BaseTestCase
     {
         $this->app['config']->set('modules.stubs.enabled', true);
 
-        $this->assertEquals(base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'), $this->repository->getStubPath());
+        $this->assertEquals(base_path('vendor/llama/laravel-modules/src/Commands/stubs'), $this->repository->getStubPath());
     }
 
     /** @test */

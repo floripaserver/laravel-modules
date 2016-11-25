@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\tests\Commands;
+namespace Llama\Modules\tests\Commands;
 
 use Illuminate\Support\Facades\Schema;
-use Nwidart\Modules\Repository;
-use Nwidart\Modules\Tests\BaseTestCase;
+use Llama\Modules\Repository;
+use Llama\Modules\Tests\BaseTestCase;
 
 abstract class MigrateCommandTest extends BaseTestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\tests\Commands;
+namespace Llama\Modules\tests\Commands;
 
-use Nwidart\Modules\Tests\BaseTestCase;
+use Llama\Modules\Tests\BaseTestCase;
 
 class GenerateMiddlewareCommandTest extends BaseTestCase
 {

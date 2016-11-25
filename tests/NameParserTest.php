@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\tests;
+namespace Llama\Modules\tests;
 
-use Nwidart\Modules\Support\Migrations\NameParser;
+use Llama\Modules\Support\Migrations\NameParser;
 
 class NameParserTest extends \PHPUnit_Framework_TestCase
 {

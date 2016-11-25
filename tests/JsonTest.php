@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\tests;
+namespace Llama\Modules\tests;
 
-use Nwidart\Modules\Json;
+use Llama\Modules\Json;
 
 class JsonTest extends BaseTestCase
 {

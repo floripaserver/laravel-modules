@@ -97,7 +97,7 @@ All Notable changes to `laravel-modules` will be documented in this file.
 
 ### Fixed
 
-- Module generation namespace now works with `StudlyCase` ([Issue #14](https://github.com/nWidart/laravel-modules/issues/14))
+- Module generation namespace now works with `StudlyCase` ([Issue #14](https://github.com/xuanhoa88/laravel-modules/issues/14))
 - No module namespace fix (#13)
 
 ### Changed

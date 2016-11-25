@@ -141,7 +141,7 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'llama',
         'author' => [
             'name' => 'XuaNguyen',
             'email' => 'xuan.0211@gmail.com',

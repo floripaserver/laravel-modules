@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\tests;
+namespace Llama\Modules\tests;
 
-use Nwidart\Modules\Facades\Module;
+use Llama\Modules\Facades\Module;
 
 class ModuleFacadeTest extends BaseTestCase
 {

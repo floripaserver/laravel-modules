@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\tests;
+namespace Llama\Modules\tests;
 
-use Nwidart\Modules\Json;
-use Nwidart\Modules\Module;
+use Llama\Modules\Json;
+use Llama\Modules\Module;
 
 class ModuleTest extends BaseTestCase
 {
@@ -85,7 +85,7 @@ class ModuleTest extends BaseTestCase
     /** @test */
     public function it_reads_key_from_composer_json_file_via_helper_method()
     {
-        $this->assertEquals('nwidart/recipe', $this->module->getComposerAttr('name'));
+        $this->assertEquals('llama/recipe', $this->module->getComposerAttr('name'));
     }
 
     /** @test */
