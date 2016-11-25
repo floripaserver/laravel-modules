@@ -141,7 +141,7 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'llama',
+        'vendor' => 'llama-laravel/modules',
         'author' => [
             'name' => 'XuaNguyen',
             'email' => 'xuan.0211@gmail.com',
