@@ -85,7 +85,7 @@ class ModuleGeneratorTest extends BaseTestCase
 
         $file = $this->finder->get(base_path('modules/ModuleName') . '/Providers/ModuleNameServiceProvider.php');
 
-        $this->assertTrue(str_contains($file, 'namespace Modules\ModuleName\Providers;'));
+        $this->assertTrue(str_contains($file, 'namespace App\Modules\ModuleName\Providers;'));
     }
 
     private function getExpectedComposerJson()
