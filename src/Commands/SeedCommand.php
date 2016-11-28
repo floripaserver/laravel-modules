@@ -90,7 +90,7 @@ class SeedCommand extends Command
     {
         $seeders = [];
         $name = $module->getName();
-        $config = $module->get('migration');
+        $config = $module->get('seed');
         if (is_array($config) && array_key_exists('seeds', $config)) {
             foreach ((array)$config['seeds'] as $class) {
                 if (@class_exists($class)) {
