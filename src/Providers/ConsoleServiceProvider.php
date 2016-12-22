@@ -24,7 +24,7 @@ use Llama\Modules\Commands\MigrateCommand;
 use Llama\Modules\Commands\MigrateRefreshCommand;
 use Llama\Modules\Commands\MigrateResetCommand;
 use Llama\Modules\Commands\MigrateRollbackCommand;
-use Llama\Modules\Commands\MigrationCommand;
+use Llama\Modules\Commands\MakeMigrationCommand;
 use Llama\Modules\Commands\ModelCommand;
 use Llama\Modules\Commands\PublishAssetCommand;
 use Llama\Modules\Commands\PublishConfigurationCommand;
@@ -63,7 +63,7 @@ class ConsoleServiceProvider extends ServiceProvider
         MigrateRefreshCommand::class,
         MigrateResetCommand::class,
         MigrateRollbackCommand::class,
-        MigrationCommand::class,
+        MakeMigrationCommand::class,
         ModelCommand::class,
         PublishAssetCommand::class,
         PublishMigrationCommand::class,
