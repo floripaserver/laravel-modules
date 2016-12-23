@@ -159,7 +159,7 @@ class Module extends ServiceProvider
     {
         $lowerName = $this->getLowerName();
 
-        $langPath = $this->getPath() . '/' . ltrim($this->module->config('paths.generator.lang'), '/');
+        $langPath = $this->getPath() . '/' . ltrim(config('modules.paths.generator.lang'), '/');
 
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, $lowerName);
