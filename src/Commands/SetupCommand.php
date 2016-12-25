@@ -2,7 +2,9 @@
 
 namespace Llama\Modules\Commands;
 
-class SetupCommand extends Command
+use Illuminate\Console\Command as BaseCommand;
+
+class SetupCommand extends BaseCommand
 {
     /**
      * The console command name.

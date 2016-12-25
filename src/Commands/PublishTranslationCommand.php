@@ -5,8 +5,9 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Module;
 use Llama\Modules\Publishing\LangPublisher;
 use Symfony\Component\Console\Input\InputArgument;
+use Illuminate\Console\Command as BaseCommand;
 
-class PublishTranslationCommand extends Command
+class PublishTranslationCommand extends BaseCommand
 {
     /**
      * The console command name.

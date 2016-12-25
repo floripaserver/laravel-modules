@@ -6,8 +6,9 @@ use Llama\Modules\Migrations\Migrator;
 use Llama\Modules\Traits\MigrationLoaderTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Console\Command as BaseCommand;
 
-class MigrateResetCommand extends Command
+class MigrateResetCommand extends BaseCommand
 {
     use MigrationLoaderTrait;
 

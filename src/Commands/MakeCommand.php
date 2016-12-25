@@ -5,8 +5,9 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Generators\ModuleGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Console\Command as BaseCommand;
 
-class MakeCommand extends Command
+class MakeCommand extends BaseCommand
 {
     /**
      * The console command name.

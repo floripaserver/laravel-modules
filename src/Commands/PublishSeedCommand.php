@@ -5,8 +5,9 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Migrations\Seeder;
 use Llama\Modules\Publishing\SeedPublisher;
 use Symfony\Component\Console\Input\InputArgument;
+use Illuminate\Console\Command as BaseCommand;
 
-class PublishSeedCommand extends Command
+class PublishSeedCommand extends BaseCommand
 {
     /**
      * The console command name.

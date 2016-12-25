@@ -6,8 +6,9 @@ use Llama\Modules\Json;
 use Llama\Modules\Process\Installer;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Console\Command as BaseCommand;
 
-class InstallCommand extends Command
+class InstallCommand extends BaseCommand
 {
     /**
      * The console command name.

@@ -6,8 +6,9 @@ use Llama\Modules\Migrations\Migrator;
 use Llama\Modules\Module;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Console\Command as BaseCommand;
 
-class MigrateCommand extends Command
+class MigrateCommand extends BaseCommand
 {
     /**
      * The console command name.
