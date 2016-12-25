@@ -2,7 +2,6 @@
 
 namespace Llama\Modules\Commands;
 
-use Illuminate\Console\Command;
 use Llama\Modules\Migrations\Migrator;
 use Llama\Modules\Publishing\MigrationPublisher;
 use Symfony\Component\Console\Input\InputArgument;

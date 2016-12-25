@@ -2,7 +2,6 @@
 
 namespace Llama\Modules\Commands;
 
-use Illuminate\Console\Command;
 use Llama\Modules\Module;
 use Llama\Modules\Publishing\LangPublisher;
 use Symfony\Component\Console\Input\InputArgument;

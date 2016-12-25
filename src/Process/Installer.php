@@ -33,7 +33,7 @@ class Installer
     /**
      * The console command instance.
      *
-     * @var \Illuminate\Console\Command
+     * @var Command
      */
     protected $console;
 
@@ -98,7 +98,7 @@ class Installer
     /**
      * Set console command instance.
      *
-     * @param \Illuminate\Console\Command $console
+     * @param Command $console
      *
      * @return $this
      */

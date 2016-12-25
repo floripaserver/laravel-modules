@@ -26,7 +26,7 @@ abstract class Publisher implements PublisherInterface
     /**
      * The laravel console instance.
      *
-     * @var \Illuminate\Console\Command
+     * @var Command
      */
     protected $console;
 
@@ -122,7 +122,7 @@ abstract class Publisher implements PublisherInterface
     /**
      * Set console instance.
      *
-     * @param \Illuminate\Console\Command $console
+     * @param Command $console
      *
      * @return $this
      */
@@ -136,7 +136,7 @@ abstract class Publisher implements PublisherInterface
     /**
      * Get console instance.
      *
-     * @return \Illuminate\Console\Command
+     * @return Command
      */
     public function getConsole()
     {

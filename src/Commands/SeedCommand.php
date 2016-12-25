@@ -2,7 +2,6 @@
 
 namespace Llama\Modules\Commands;
 
-use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use RuntimeException;
 use Llama\Modules\Module;

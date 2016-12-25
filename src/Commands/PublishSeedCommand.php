@@ -2,7 +2,6 @@
 
 namespace Llama\Modules\Commands;
 
-use Illuminate\Console\Command;
 use Llama\Modules\Migrations\Seeder;
 use Llama\Modules\Publishing\SeedPublisher;
 use Symfony\Component\Console\Input\InputArgument;

@@ -2,7 +2,6 @@
 
 namespace Llama\Modules\Commands;
 
-use Illuminate\Console\Command;
 use Llama\Modules\Json;
 use Llama\Modules\Process\Installer;
 use Symfony\Component\Console\Input\InputArgument;

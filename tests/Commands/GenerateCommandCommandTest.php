@@ -64,7 +64,7 @@ class GenerateMakeCommandCommandTest extends BaseTestCase
 
 namespace Modules\Blog\Console;
 
-use Illuminate\Console\Command;
+use Llama\Modules\Commands\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
