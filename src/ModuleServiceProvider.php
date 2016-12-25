@@ -2,12 +2,13 @@
 
 namespace Llama\Modules;
 
+use Illuminate\Support\ServiceProvider;
 use Llama\Modules\Providers\BootstrapServiceProvider;
 use Llama\Modules\Providers\ConsoleServiceProvider;
 use Llama\Modules\Providers\ContractsServiceProvider;
 use Llama\Modules\Support\Stub;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class ModuleServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
