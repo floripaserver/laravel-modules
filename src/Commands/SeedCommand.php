@@ -146,8 +146,11 @@ class SeedCommand extends BaseCommand
         $name = Str::studly($name);
 
         $namespace = $this->laravel['modules']->config('namespace');
+        $namespace .= '\\' . $name;
+        $namespace .= '\\' . trim(str_replace('/', '\\', $this->getSeedPath()), '\\');
+        $namespace .= '\\' . $name . 'DatabaseSeeder';
 
-        return $namespace . '\\' . $name . '\Database\Seeders\\' . $name . 'DatabaseSeeder';
+        return $namespace;
     }
 
     /**
