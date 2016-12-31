@@ -36,10 +36,10 @@ class MakeSeedCommand extends Command
      */
     protected function getArguments()
     {
-        return array(
-            array('name', InputArgument::REQUIRED, 'The name of seeder will be created.'),
-            array('module', InputArgument::OPTIONAL, 'The name of module will be used.'),
-        );
+        return [
+            ['name', InputArgument::REQUIRED, 'The name of seeder will be created.'],
+            ['module', InputArgument::OPTIONAL, 'The name of module will be used.']
+        ];
     }
 
     /**
@@ -49,14 +49,14 @@ class MakeSeedCommand extends Command
      */
     protected function getOptions()
     {
-        return array(
-            array(
+        return [
+            [
                 'master',
                 null,
                 InputOption::VALUE_NONE,
-                'Indicates the seeder will created is a master database seeder.',
-            ),
-        );
+                'Indicates the seeder will created is a master database seeder.'
+            ],
+        ];
     }
 
     /**
@@ -69,8 +69,7 @@ class MakeSeedCommand extends Command
         return (new Stub('/seeder.stub', [
             'NAME' => $this->getSeederName(),
             'MODULE' => $this->getModuleName(),
-            'NAMESPACE' => $this->getClassNamespace($module),
-
+            'NAMESPACE' => $this->getClassNamespace($module)
         ]))->render();
     }
 
