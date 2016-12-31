@@ -31,7 +31,7 @@ use Llama\Modules\Commands\PublishConfigurationCommand;
 use Llama\Modules\Commands\PublishMigrationCommand;
 use Llama\Modules\Commands\PublishTranslationCommand;
 use Llama\Modules\Commands\SeedCommand;
-use Llama\Modules\Commands\SeedMakeCommand;
+use Llama\Modules\Commands\MakeSeedCommand;
 use Llama\Modules\Commands\SetupCommand;
 use Llama\Modules\Commands\UpdateCommand;
 use Llama\Modules\Commands\UseCommand;
@@ -69,7 +69,7 @@ class ConsoleServiceProvider extends ServiceProvider
         PublishMigrationCommand::class,
         PublishTranslationCommand::class,
         SeedCommand::class,
-        SeedMakeCommand::class,
+        MakeSeedCommand::class,
         SetupCommand::class,
         UpdateCommand::class,
         UseCommand::class,
