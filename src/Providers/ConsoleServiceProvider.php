@@ -95,8 +95,6 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        $provides = $this->commands;
-
-        return $provides;
+        return $this->commands;
     }
 }
