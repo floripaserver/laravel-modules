@@ -9,7 +9,7 @@ use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class SeedMakeCommand extends Command
+class MakeSeedCommand extends Command
 {
     use ModuleCommandTrait, CanClearModulesCache;
 
