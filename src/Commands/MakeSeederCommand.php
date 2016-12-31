@@ -82,9 +82,15 @@ class MakeSeederCommand extends Command
 
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $seederPath = $this->laravel['modules']->config('paths.generator.seed');
-
-        return $path . $seederPath . '/' . $this->getClassName() . '.php';
+        return $path . $this->getSeedPath() . '/' . $this->getClassName() . '.php';
+    }
+    
+    /**
+     * @return string
+     */
+    private function getSeedPath()
+    {
+    	return $this->laravel['modules']->config('paths.generator.seed');
     }
 
     /**
@@ -93,5 +99,17 @@ class MakeSeederCommand extends Command
     private function getClassName()
     {
         return Str::studly($this->argument('name')) . ($this->option('master') ? 'DatabaseSeeder' : 'TableSeeder');
+    }
+
+    /**
+     * Get class namespace.
+     *
+     * @param \Llama\Modules\Module $module
+     *
+     * @return string
+     */
+    public function getClassNamespace($module)
+    {
+        return parent::getClassNamespace($module) . '\\' . trim(str_replace('/', '\\', $this->getSeedPath()), '\\');
     }
 }
