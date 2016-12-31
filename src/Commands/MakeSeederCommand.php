@@ -20,7 +20,7 @@ class MakeSeederCommand extends Command
      *
      * @var string
      */
-    protected $name = 'module:make-seed';
+    protected $name = 'module:make-seeder';
 
     /**
      * The console command description.
