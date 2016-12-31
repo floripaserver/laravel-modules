@@ -256,7 +256,7 @@ php artisan module:migrate
 Create new seed for the specified module.
 
 ```
-php artisan module:make-seed users blog
+php artisan module:make-seeder users blog
 ```
 
 Seed from the specified module.
