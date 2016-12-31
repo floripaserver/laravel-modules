@@ -95,8 +95,6 @@ class MakeSeedCommand extends Command
      */
     private function getSeederName()
     {
-        $end = $this->option('master') ? 'DatabaseSeeder' : 'TableSeeder';
-
-        return Str::studly($this->argument('name')) . $end;
+        return date('Y_m_d_His_') . Str::studly($this->argument('name')) . ($this->option('master') ? 'DatabaseSeeder' : 'TableSeeder');
     }
 }
