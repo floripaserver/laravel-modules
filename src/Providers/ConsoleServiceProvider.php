@@ -35,7 +35,6 @@ use Llama\Modules\Commands\MakeSeederCommand;
 use Llama\Modules\Commands\SetupCommand;
 use Llama\Modules\Commands\UpdateCommand;
 use Llama\Modules\Commands\UseCommand;
-use Llama\Modules\Commands\PublishSeedCommand;
 
 class ConsoleServiceProvider extends ServiceProvider
 {
@@ -78,8 +77,7 @@ class ConsoleServiceProvider extends ServiceProvider
         PublishConfigurationCommand::class,
         GenerateJobCommand::class,
         GenerateMailCommand::class,
-        GenerateNotificationCommand::class,
-        PublishSeedCommand::class
+        GenerateNotificationCommand::class
     ];
 
     /**
