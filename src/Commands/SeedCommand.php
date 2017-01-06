@@ -152,6 +152,14 @@ class SeedCommand extends BaseCommand
 
         return $namespace;
     }
+    
+    /**
+     * @return string
+     */
+    private function getSeedPath()
+    {
+    	return $this->laravel['modules']->config('paths.generator.seed');
+    }
 
     /**
      * Get the console command arguments.
