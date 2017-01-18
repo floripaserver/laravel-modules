@@ -8,6 +8,7 @@ use Llama\Modules\Traits\CanClearModulesCache;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Console\Command;
 
 class MakeSeederCommand extends Command
 {

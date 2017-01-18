@@ -2,7 +2,7 @@
 
 namespace $NAMESPACE$;
 
-use Llama\Modules\Commands\Command;
+use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
