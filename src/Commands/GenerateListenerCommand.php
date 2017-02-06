@@ -7,7 +7,6 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\GeneratorCommand;
 
 class GenerateListenerCommand extends GeneratorCommand
 {
@@ -83,7 +82,7 @@ class GenerateListenerCommand extends GeneratorCommand
      */
     protected function getStub() 
     {
-    	return __DIR__.'/stubs/listener.stub';
+    	return '/listener.stub';
     }
 
     /**
