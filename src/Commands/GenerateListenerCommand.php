@@ -7,9 +7,9 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command;
+use Illuminate\Console\GeneratorCommand;
 
-class GenerateListenerCommand extends Command
+class GenerateListenerCommand extends GeneratorCommand
 {
     use ModuleCommandTrait;
 
