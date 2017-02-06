@@ -58,7 +58,7 @@ class GenerateListenerCommand extends GeneratorCommand
     {
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
-        return (new Stub('/listener.stub', [
+        return (new Stub($this->getStub(), [
             'NAMESPACE' => $this->getNamespace($module),
             "EVENTNAME" => $this->getEventName($module),
             "EVENTSHORTENEDNAME" => $this->option('event'),
@@ -74,6 +74,16 @@ class GenerateListenerCommand extends GeneratorCommand
         $seederPath = $this->laravel['modules']->config('paths.generator.listener');
 
         return $path . $seederPath . '/' . $this->getFileName() . '.php';
+    }
+
+    /**
+     * Get the stub file for the generator.
+     *
+     * @return string
+     */
+    protected function getStub() 
+    {
+    	return __DIR__.'/stubs/listener.stub';
     }
 
     /**
