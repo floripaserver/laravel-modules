@@ -8,12 +8,6 @@ use Llama\Modules\Generators\FileGenerator;
 abstract class GeneratorCommand extends Command
 {
     /**
-     * The name of 'name' argument.
-     *
-     * @var string
-     */
-    protected $argumentName = '';
-    /**
      * Get template contents.
      *
      * @return string
