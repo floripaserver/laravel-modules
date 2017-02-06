@@ -38,39 +38,29 @@ class MigrateCommand extends BaseCommand
     {
         $this->module = $this->laravel['modules'];
 
-        $name = $this->argument('module');
-
-        if ($name) {
+        if ($name = $this->argument('module')) {
             $module = $this->module->findOrFail($name);
-            return $this->migrate($module);
-        }
-
-        foreach ($this->module->getOrdered($this->option('direction')) as $module) {
-            $this->line('Running for module: <info>' . $module->getName() . '</info>');
-
-            $this->migrate($module);
-        }
-    }
-
-    /**
-     * Run the migration from the specified module.
-     *
-     * @param Module $module
-     *
-     * @return mixed
-     */
-    protected function migrate(Module $module)
-    {
-        $path = str_replace(base_path(), '', (new Migrator($module))->getPath());
-        $this->call('migrate', [
-            '--path' => $path,
-            '--database' => $this->option('database'),
-            '--pretend' => $this->option('pretend'),
-            '--force' => $this->option('force'),
-        ]);
-
-        if ($this->option('seed')) {
-            $this->call('module:seed', ['module' => $module->getName()]);
+	        $this->call('migrate', [
+	            '--path' => str_replace(base_path(), '', (new Migrator($module))->getPath()),
+	            '--database' => $this->option('database'),
+	            '--pretend' => $this->option('pretend'),
+	            '--force' => $this->option('force'),
+	        ]);
+	
+	        if ($this->option('seed')) {
+	            $this->call('module:seed', ['module' => $module->getName()]);
+	        }
+        } else {
+        	$this->call('module:publish-migration');
+        	$this->call('migrate', [
+        			'--database' => $this->option('database'),
+        			'--pretend' => $this->option('pretend'),
+        			'--force' => $this->option('force'),
+        	]);
+        	
+        	if ($this->option('seed')) {
+        		$this->call('module:seed');
+        	}
         }
     }
 
