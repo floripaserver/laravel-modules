@@ -9,7 +9,6 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\GeneratorCommand;
 
 class MakeMigrationCommand extends GeneratorCommand
 {
@@ -122,22 +121,22 @@ class MakeMigrationCommand extends GeneratorCommand
     	$parser = new NameParser($this->argument('name'));
     	
     	if ($parser->isCreate()) {
-    		return __DIR__ . '/stubs/migration/create.stub';
+    		return '/migration/create.stub';
     	}
     	
     	if ($parser->isAdd()) {
-    		return __DIR__ . '/stubs/migration/add.stub';
+    		return '/migration/add.stub';
     	}
     	
     	if ($parser->isDelete()) {
-    		return __DIR__ . '/stubs/migration/delete.stub';
+    		return '/migration/delete.stub';
     	}
     	
     	if ($parser->isDrop()) {
-    		return __DIR__ . '/stubs/migration/drop.stub';
+    		return '/migration/drop.stub';
     	}
     	
-    	return __DIR__ . '/stubs/migration/plain.stub';
+    	return '/migration/plain.stub';
     }
 
     /**
