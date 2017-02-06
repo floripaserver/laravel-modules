@@ -98,10 +98,8 @@ class GenerateListenerCommand extends GeneratorCommand
         return $this->getClassNamespace($module) . "\\" . config('modules.paths.generator.event') . "\\" . $this->option('event');
     }
 
-    private function getNamespace($module)
+    protected function getNamespace($module)
     {
-        $namespace = str_replace('/', '\\', config('modules.paths.generator.listener'));
-
-        return $this->getClassNamespace($module) . "\\" . $namespace;
+        return $this->getClassNamespace($module) . "\\" . str_replace('/', '\\', config('modules.paths.generator.listener'));
     }
 }
