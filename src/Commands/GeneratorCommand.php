@@ -63,7 +63,7 @@ abstract class GeneratorCommand extends Command
     /**
      * Get class namespace.
      *
-     * @param \Nwidart\Modules\Module $module
+     * @param \Llama\Modules\Module $module
      *
      * @return string
      */
