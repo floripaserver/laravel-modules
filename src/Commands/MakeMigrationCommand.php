@@ -75,36 +75,69 @@ class MakeMigrationCommand extends GeneratorCommand
         $parser = new NameParser($this->argument('name'));
 
         if ($parser->isCreate()) {
-            return Stub::create('/migration/create.stub', [
+            return Stub::create($this->getStub(), [
                 'class' => $this->getClass(),
                 'table' => $parser->getTableName(),
                 'fields' => $this->getSchemaParser()->render(),
             ]);
-        } elseif ($parser->isAdd()) {
-            return Stub::create('/migration/add.stub', [
+        }
+        if ($parser->isAdd()) {
+            return Stub::create($this->getStub(), [
                 'class' => $this->getClass(),
                 'table' => $parser->getTableName(),
                 'fields_up' => $this->getSchemaParser()->up(),
                 'fields_down' => $this->getSchemaParser()->down(),
             ]);
-        } elseif ($parser->isDelete()) {
-            return Stub::create('/migration/delete.stub', [
+        }
+        
+        if ($parser->isDelete()) {
+            return Stub::create($this->getStub(), [
                 'class' => $this->getClass(),
                 'table' => $parser->getTableName(),
                 'fields_down' => $this->getSchemaParser()->up(),
                 'fields_up' => $this->getSchemaParser()->down(),
             ]);
-        } elseif ($parser->isDrop()) {
-            return Stub::create('/migration/drop.stub', [
+        }
+        
+        if ($parser->isDrop()) {
+            return Stub::create($this->getStub(), [
                 'class' => $this->getClass(),
                 'table' => $parser->getTableName(),
                 'fields' => $this->getSchemaParser()->render(),
             ]);
         }
 
-        return Stub::create('/migration/plain.stub', [
+        return Stub::create($this->getStub(), [
             'class' => $this->getClass(),
         ]);
+    }
+
+    /**
+     * Get the stub file for the generator.
+     *
+     * @return string
+     */
+    protected function getStub() 
+    {
+    	$parser = new NameParser($this->argument('name'));
+    	
+    	if ($parser->isCreate()) {
+    		return __DIR__ . '/migration/create.stub';
+    	}
+    	
+    	if ($parser->isAdd()) {
+    		return __DIR__ . '/migration/add.stub';
+    	}
+    	
+    	if ($parser->isDelete()) {
+    		return __DIR__ . '/migration/delete.stub';
+    	}
+    	
+    	if ($parser->isDrop()) {
+    		return __DIR__ . '/migration/drop.stub';
+    	}
+    	
+    	return __DIR__ . '/migration/plain.stub';
     }
 
     /**
