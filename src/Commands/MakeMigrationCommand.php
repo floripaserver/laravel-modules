@@ -122,22 +122,22 @@ class MakeMigrationCommand extends GeneratorCommand
     	$parser = new NameParser($this->argument('name'));
     	
     	if ($parser->isCreate()) {
-    		return __DIR__ . '/migration/create.stub';
+    		return __DIR__ . '/stubs/migration/create.stub';
     	}
     	
     	if ($parser->isAdd()) {
-    		return __DIR__ . '/migration/add.stub';
+    		return __DIR__ . '/stubs/migration/add.stub';
     	}
     	
     	if ($parser->isDelete()) {
-    		return __DIR__ . '/migration/delete.stub';
+    		return __DIR__ . '/stubs/migration/delete.stub';
     	}
     	
     	if ($parser->isDrop()) {
-    		return __DIR__ . '/migration/drop.stub';
+    		return __DIR__ . '/stubs/migration/drop.stub';
     	}
     	
-    	return __DIR__ . '/migration/plain.stub';
+    	return __DIR__ . '/stubs/migration/plain.stub';
     }
 
     /**
