@@ -279,7 +279,6 @@ class ModuleGenerator extends Generator
         ]);
 
         $this->console->call('module:make-route', [
-            'name' => $this->getName() . 'RouteServiceProvider',
             'module' => $this->getName(),
             '--plain' => false
         ]);
