@@ -24,7 +24,7 @@ class Json
     /**
      * The laravel filesystem instance.
      *
-     * @var \Illuminate\Filesystem\Filesystem
+     * @var Filesystem
      */
     protected $filesystem;
 
@@ -39,8 +39,8 @@ class Json
      * The constructor.
      *
      * @param Application $laravel
-     * @param mixed                             $path
-     * @param \Illuminate\Filesystem\Filesystem $filesystem
+     * @param mixed $path
+     * @param Filesystem $filesystem
      */
     public function __construct(Application $laravel, $path, Filesystem $filesystem = null)
     {
@@ -102,7 +102,7 @@ class Json
      * Make new instance.
      *
      * @param string                            $path
-     * @param \Illuminate\Filesystem\Filesystem $filesystem
+     * @param Filesystem $filesystem
      *
      * @return static
      */

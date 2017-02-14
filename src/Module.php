@@ -177,7 +177,7 @@ class Module extends ServiceProvider
             $file = 'module.json';
         }
 
-        return new Json($this->getPath() . '/' . $file, $this->app['files']);
+        return new Json($this->app, $this->getPath() . '/' . $file, $this->app['files']);
     }
 
     /**
