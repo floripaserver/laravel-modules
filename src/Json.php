@@ -2,10 +2,18 @@
 
 namespace Llama\Modules;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Filesystem\Filesystem;
 
 class Json
 {
+    /**
+     * The laravel application instance.
+     *
+     * @var Application
+     */
+    protected $laravel;
+
     /**
      * The file path.
      *
@@ -30,11 +38,13 @@ class Json
     /**
      * The constructor.
      *
+     * @param Application $laravel
      * @param mixed                             $path
      * @param \Illuminate\Filesystem\Filesystem $filesystem
      */
-    public function __construct($path, Filesystem $filesystem = null)
+    public function __construct(Application $laravel, $path, Filesystem $filesystem = null)
     {
+        $this->laravel = $laravel;
         $this->path = (string) $path;
         $this->filesystem = $filesystem ?: new Filesystem();
         $this->attributes = Collection::make($this->getAttributes());
@@ -118,11 +128,11 @@ class Json
      */
     public function getAttributes()
     {
-        if (config('modules.cache.enabled') === false) {
+        if (this->laravel['modules']->config('cache.enabled') === false) {
             return json_decode($this->getContents(), 1);
         }
 
-        return app('cache')->remember($this->getPath(), config('modules.cache.lifetime'), function () {
+        return app('cache')->remember($this->getPath(), this->laravel['modules']->config('cache.lifetime'), function () {
             return json_decode($this->getContents(), 1);
         });
     }

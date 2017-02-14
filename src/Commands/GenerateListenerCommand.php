@@ -59,10 +59,10 @@ class GenerateListenerCommand extends GeneratorCommand
 
         return (new Stub($this->getStub(), [
             'NAMESPACE' => $this->getNamespace($module),
-            "EVENTNAME" => $this->getEventName($module),
-            "EVENTSHORTENEDNAME" => $this->option('event'),
-            "CLASS" => $this->getClass(),
-            'DUMMYNAMESPACE' => $this->laravel->getNamespace() . "Events",
+            'EVENTNAME' => $this->getEventName($module),
+            'EVENTSHORTENEDNAME' => $this->option('event'),
+            'CLASS' => $this->getClass(),
+            'DUMMYNAMESPACE' => $this->laravel->getNamespace() . 'Events',
         ]))->render();
     }
 
@@ -70,9 +70,7 @@ class GenerateListenerCommand extends GeneratorCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $seederPath = $this->laravel['modules']->config('paths.generator.listener');
-
-        return $path . $seederPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -104,11 +102,19 @@ class GenerateListenerCommand extends GeneratorCommand
 
     protected function getEventName(Module $module)
     {
-        return $this->getClassNamespace($module) . "\\" . $this->laravel['modules']->config('paths.generator.event') . "\\" . $this->option('event');
+        return $this->getClassNamespace($module) . '\\' . $this->getDefaultNamespace() . '\\' . $this->option('event');
     }
 
     protected function getNamespace($module)
     {
-        return $this->getClassNamespace($module) . "\\" . str_replace('/', '\\', $this->laravel['modules']->config('paths.generator.listener'));
+        return $this->getClassNamespace($module) . '\\' . str_replace('/', '\\', $this->getDefaultNamespace());
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->laravel['modules']->config('paths.generator.listener', 'Events/Handlers');
     }
 }

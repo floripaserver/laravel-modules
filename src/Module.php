@@ -143,7 +143,7 @@ class Module extends ServiceProvider
      */
     public function boot()
     {
-        if (config('modules.register.translations', true) === true) {
+        if (this->app['modules']->config('register.translations', true) === true) {
             $this->registerTranslation();
         }
 
@@ -159,7 +159,7 @@ class Module extends ServiceProvider
     {
         $lowerName = $this->getLowerName();
 
-        $langPath = $this->getPath() . '/' . ltrim(config('modules.paths.generator.lang'), '/');
+        $langPath = $this->getPath() . '/' . ltrim($this->getDefaultNamespace(), '/');
 
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, $lowerName);
@@ -393,5 +393,15 @@ class Module extends ServiceProvider
     public function __get($key)
     {
         return $this->get($key);
+    }
+
+    /**
+     * Get default namespace.
+     *
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->app['modules']->config('paths.generator.lang', 'Resources/lang');
     }
 }

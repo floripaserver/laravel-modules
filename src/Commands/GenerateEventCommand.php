@@ -57,8 +57,8 @@ class GenerateEventCommand extends GeneratorCommand
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub('/event.stub', [
-            'NAMESPACE' => $this->getClassNamespace($module) . "\\" . $this->laravel['modules']->config('paths.generator.event'),
-            "CLASS" => $this->getClass(),
+            'NAMESPACE' => $this->getClassNamespace($module) . '\\' . $this->getDefaultNamespace(),
+            'CLASS' => $this->getClass(),
             'DUMMYNAMESPACE' => $this->laravel->getNamespace() . 'Events',
         ]))->render();
     }
@@ -66,9 +66,8 @@ class GenerateEventCommand extends GeneratorCommand
     public function getDestinationFilePath()
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
-        $seederPath = $this->laravel['modules']->config('paths.generator.event');
-
-        return $path . $seederPath . '/' . $this->getFileName() . '.php';
+        
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -77,5 +76,13 @@ class GenerateEventCommand extends GeneratorCommand
     protected function getFileName()
     {
         return studly_case($this->argument('name'));
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->laravel['modules']->config('paths.generator.event', 'Events');
     }
 }

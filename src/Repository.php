@@ -17,7 +17,7 @@ class Repository implements RepositoryInterface, Countable
      *
      * @var Application
      */
-    protected $app;
+    protected $laravel;
 
     /**
      * The module path.
@@ -41,12 +41,12 @@ class Repository implements RepositoryInterface, Countable
     /**
      * The constructor.
      *
-     * @param Application $app
+     * @param Application $laravel
      * @param string|null $path
      */
-    public function __construct(Application $app, $path = null)
+    public function __construct(Application $laravel, $path = null)
     {
-        $this->app = $app;
+        $this->laravel = $laravel;
         $this->path = $path;
     }
 
@@ -116,14 +116,14 @@ class Repository implements RepositoryInterface, Countable
         $modules = [];
 
         foreach ($paths as $key => $path) {
-            $manifests = $this->app['files']->glob("{$path}/module.json");
+            $manifests = $this->getFiles()->glob("{$path}/module.json");
 
             is_array($manifests) || $manifests = [];
 
             foreach ($manifests as $manifest) {
                 $name = Json::make($manifest)->get('name');
 
-                $modules[$name] = new Module($this->app, $name, dirname($manifest));
+                $modules[$name] = new Module($this->laravel, $name, dirname($manifest));
             }
         }
 
@@ -158,7 +158,7 @@ class Repository implements RepositoryInterface, Countable
         foreach ($cached as $name => $module) {
             $path = $this->config('paths.modules') . '/' . $name;
 
-            $modules[$name] = new Module($this->app, $name, $path);
+            $modules[$name] = new Module($this->laravel, $name, $path);
         }
 
         return $modules;
@@ -171,7 +171,7 @@ class Repository implements RepositoryInterface, Countable
      */
     public function getCached()
     {
-        return $this->app['cache']->remember($this->config('cache.key'), $this->config('cache.lifetime'), function () {
+        return $this->laravel['cache']->remember($this->config('cache.key'), $this->config('cache.lifetime'), function () {
             return $this->toCollection()->toArray();
         });
     }
@@ -398,7 +398,7 @@ class Repository implements RepositoryInterface, Countable
      */
     public function config($key, $default = null)
     {
-        return $this->app['config']->get('llama.modules.' . $key, $default);
+        return $this->laravel['config']->get('llama.modules.' . $key, $default);
     }
 
     /**
@@ -408,8 +408,8 @@ class Repository implements RepositoryInterface, Countable
      */
     public function getUsedStoragePath()
     {
-        if (!$this->app['files']->exists($path = storage_path('app/modules'))) {
-            $this->app['files']->makeDirectory($path, 0777, true);
+        if (!$this->getFiles()->exists($path = storage_path('app/modules'))) {
+            $this->getFiles()->makeDirectory($path, 0777, true);
         }
 
         return $path . '/modules.used';
@@ -426,7 +426,7 @@ class Repository implements RepositoryInterface, Countable
     {
         $module = $this->findOrFail($name);
 
-        $this->app['files']->put($this->getUsedStoragePath(), $module);
+        $this->getFiles()->put($this->getUsedStoragePath(), $module);
     }
 
     /**
@@ -436,7 +436,7 @@ class Repository implements RepositoryInterface, Countable
      */
     public function getUsedNow()
     {
-        return $this->findOrFail($this->app['files']->get($this->getUsedStoragePath()));
+        return $this->findOrFail($this->getFiles()->get($this->getUsedStoragePath()));
     }
 
     /**
@@ -456,7 +456,7 @@ class Repository implements RepositoryInterface, Countable
      */
     public function getFiles()
     {
-        return $this->app['files'];
+        return $this->laravel['files'];
     }
 
     /**
@@ -482,7 +482,7 @@ class Repository implements RepositoryInterface, Countable
 
         $baseUrl = str_replace(public_path() . DIRECTORY_SEPARATOR, '', $this->getAssetsPath());
 
-        $url = $this->app['url']->asset($baseUrl . "/{$name}/" . $url);
+        $url = $this->laravel['url']->asset($baseUrl . "/{$name}/" . $url);
 
         return str_replace(['http://', 'https://'], '//', $url);
     }

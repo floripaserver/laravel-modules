@@ -82,9 +82,7 @@ class GenerateRouteProviderCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $generatorPath = $this->laravel['modules']->config('paths.generator.provider');
-
-        return $path . $generatorPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -92,6 +90,16 @@ class GenerateRouteProviderCommand extends BaseCommand
      */
     private function getFileName()
     {
-        return 'RouteServiceProvider';
+        return Str::studly($this->argument('name'));
+    }
+
+    /**
+     * Get default namespace.
+     *
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->laravel['modules']->config('paths.generator.provider', 'Providers');
     }
 }

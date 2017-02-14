@@ -147,18 +147,20 @@ class SeedCommand extends BaseCommand
 
         $namespace = $this->laravel['modules']->config('namespace');
         $namespace .= '\\' . $name;
-        $namespace .= '\\' . trim(str_replace('/', '\\', $this->getSeedPath()), '\\');
+        $namespace .= '\\' . trim(str_replace('/', '\\', $this->getDefaultNamespace()), '\\');
         $namespace .= '\\' . $name . 'DatabaseSeeder';
 
         return $namespace;
     }
-    
+
     /**
+     * Get default namespace.
+     *
      * @return string
      */
-    private function getSeedPath()
+    public function getDefaultNamespace()
     {
-    	return $this->laravel['modules']->config('paths.generator.seed');
+        return $this->laravel['modules']->config('paths.generator.seed', 'Database/Seeds');
     }
 
     /**

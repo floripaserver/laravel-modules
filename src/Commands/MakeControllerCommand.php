@@ -41,9 +41,7 @@ class MakeControllerCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $controllerPath = $this->laravel['modules']->config('paths.generator.controller');
-
-        return $path . $controllerPath . '/' . $this->getControllerName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getControllerName() . '.php';
     }
 
     /**
@@ -74,10 +72,10 @@ class MakeControllerCommand extends BaseCommand
      */
     protected function getArguments()
     {
-        return array(
-            array('controller', InputArgument::REQUIRED, 'The name of the controller class.'),
-            array('module', InputArgument::OPTIONAL, 'The name of module will be used.'),
-        );
+        return [
+            ['controller', InputArgument::REQUIRED, 'The name of the controller class.'],
+            ['module', InputArgument::OPTIONAL, 'The name of module will be used.']
+        ];
     }
 
     /**
@@ -111,7 +109,7 @@ class MakeControllerCommand extends BaseCommand
      */
     public function getDefaultNamespace()
     {
-        return 'Http\Controllers';
+        return $this->laravel['modules']->config('paths.generator.controller', 'Http/Controllers');
     }
 
     /**

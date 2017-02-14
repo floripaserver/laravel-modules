@@ -68,11 +68,7 @@ class Migrator
      */
     public function getPath()
     {
-        $config = $this->module->get('migration');
-
-        $path = (is_array($config) && array_key_exists('path', $config)) ? $config['path'] : config('modules.paths.generator.migration');
-
-        return $this->module->getExtraPath($path);
+        return $this->module->getExtraPath($this->getDefaultNamespace());
     }
 
     /**
@@ -302,5 +298,15 @@ class Migrator
     public function getRan()
     {
         return $this->table()->pluck('migration');
+    }
+
+    /**
+     * Get default namespace.
+     *
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->laravel['modules']->config('paths.generator.migration', 'Database/Migrations');
     }
 }

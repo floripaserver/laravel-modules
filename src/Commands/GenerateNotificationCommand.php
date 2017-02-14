@@ -43,9 +43,7 @@ final class GenerateNotificationCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $mailPath = $this->laravel['modules']->config('paths.generator.notifications', 'Notifications');
-
-        return $path . $mailPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -74,6 +72,6 @@ final class GenerateNotificationCommand extends BaseCommand
      */
     public function getDefaultNamespace()
     {
-        return $this->laravel['modules']->config('paths.generator.notifications', 'Notifications');
+        return $this->laravel['modules']->config('paths.generator.notification', 'Notifications');
     }
 }

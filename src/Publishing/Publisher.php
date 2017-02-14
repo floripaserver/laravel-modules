@@ -52,6 +52,13 @@ abstract class Publisher implements PublisherInterface
     protected $showMessage = true;
 
     /**
+     * Laravel Application instance.
+     *
+     * @var \Illuminate\Foundation\Application.
+     */
+    protected $laravel;
+
+    /**
      * The constructor.
      *
      * @param Module $module
@@ -59,6 +66,7 @@ abstract class Publisher implements PublisherInterface
     public function __construct(Module $module)
     {
         $this->module = $module;
+        $this->laravel = $module->getLaravel();
     }
 
     /**

@@ -146,9 +146,7 @@ class MakeMigrationCommand extends GeneratorCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $generatorPath = $this->laravel['modules']->config('paths.generator.migration');
-
-        return $path . $generatorPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -192,4 +190,15 @@ class MakeMigrationCommand extends GeneratorCommand
         }
         $this->call('optimize');
     }
+
+    /**
+     * Get default namespace.
+     *
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->laravel['modules']->config('paths.generator.migration', 'Database/Migrations');
+    }
+
 }

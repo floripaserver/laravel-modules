@@ -9,8 +9,8 @@ trait CanClearModulesCache
      */
     public function clearCache()
     {
-        if (config('modules.cache.enabled') === true) {
-            app('cache')->forget(config('modules.cache.key'));
+        if (this->laravel['modules']->config('cache.enabled') === true) {
+            app('cache')->forget(this->laravel['modules']->config('cache.key'));
         }
     }
 }

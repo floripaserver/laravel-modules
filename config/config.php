@@ -105,7 +105,7 @@ return [
         */
 
         'generator' => [
-            'assets' => 'Resources/assets',
+            'asset' => 'Resources/assets',
             'config' => 'Config',
             'command' => 'Console',
             'event' => 'Events',
@@ -119,12 +119,12 @@ return [
             'request' => 'Http/Requests',
             'provider' => 'Providers',
             'lang' => 'Resources/lang',
-            'views' => 'Resources/views',
+            'view' => 'Resources/views',
             'test' => 'Tests',
-            'jobs' => 'Jobs',
-            'emails' => 'Emails',
-            'notifications' => 'Notifications',
-            'routes' => 'Routes'
+            'job' => 'Jobs',
+            'email' => 'Emails',
+            'notification' => 'Notifications',
+            'route' => 'Routes'
         ]
     ],
     /*

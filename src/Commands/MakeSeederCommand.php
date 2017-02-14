@@ -82,15 +82,7 @@ class MakeSeederCommand extends BaseCommand
 
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        return $path . $this->getSeedPath() . '/' . $this->getClassName() . '.php';
-    }
-    
-    /**
-     * @return string
-     */
-    private function getSeedPath()
-    {
-    	return $this->laravel['modules']->config('paths.generator.seed');
+        return $path . $this->getDefaultNamespace() . '/' . $this->getClassName() . '.php';
     }
 
     /**
@@ -110,6 +102,16 @@ class MakeSeederCommand extends BaseCommand
      */
     public function getClassNamespace($module)
     {
-        return parent::getClassNamespace($module) . '\\' . trim(str_replace('/', '\\', $this->getSeedPath()), '\\');
+        return parent::getClassNamespace($module) . '\\' . trim(str_replace('/', '\\', $this->getDefaultNamespace()), '\\');
+    }
+
+    /**
+     * Get default namespace.
+     *
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->laravel['modules']->config('paths.generator.seed', 'Database/Seeds');
     }
 }

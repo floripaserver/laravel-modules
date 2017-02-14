@@ -84,9 +84,7 @@ class ModelCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $seederPath = $this->laravel['modules']->config('paths.generator.model');
-
-        return $path . $seederPath . '/' . $this->getModelName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getModelName() . '.php';
     }
 
     /**
@@ -120,6 +118,6 @@ class ModelCommand extends BaseCommand
      */
     public function getDefaultNamespace()
     {
-        return $this->laravel['modules']->config('paths.generator.model');
+        return $this->laravel['modules']->config('paths.generator.model', 'Models');
     }
 }

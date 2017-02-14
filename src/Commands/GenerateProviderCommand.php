@@ -75,7 +75,7 @@ class GenerateProviderCommand extends BaseCommand
             'NAME'              => $this->getFileName(),
             'STUDLY_NAME'       => $module->getStudlyName(),
             'MODULE_NAMESPACE'  => $this->laravel['modules']->config('namespace'),
-            'PATH_VIEWS'        => $this->laravel['modules']->config('paths.generator.views'),
+            'PATH_VIEWS'        => $this->laravel['modules']->config('paths.generator.view'),
             'PATH_LANG'         => $this->laravel['modules']->config('paths.generator.lang'),
             'PATH_CONFIG'       => $this->laravel['modules']->config('paths.generator.config'),
         ]))->render();
@@ -88,9 +88,7 @@ class GenerateProviderCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $generatorPath = $this->laravel['modules']->config('paths.generator.provider');
-
-        return $path . $generatorPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -108,6 +106,6 @@ class GenerateProviderCommand extends BaseCommand
      */
     public function getDefaultNamespace()
     {
-        return 'Providers';
+        return $this->laravel['modules']->config('paths.generator.provider', 'Providers');
     }
 }

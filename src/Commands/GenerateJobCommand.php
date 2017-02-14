@@ -63,9 +63,7 @@ class GenerateJobCommand extends GeneratorCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $jobPath = $this->laravel['modules']->config('paths.generator.jobs');
-
-        return $path . $jobPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -81,6 +79,6 @@ class GenerateJobCommand extends GeneratorCommand
      */
     public function getDefaultNamespace()
     {
-        return 'Jobs';
+        return $this->laravel['modules']->config('paths.generator.job', 'Jobs');
     }
 }

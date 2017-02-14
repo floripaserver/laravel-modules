@@ -28,8 +28,16 @@ class AssetPublisher extends Publisher
      */
     public function getSourcePath()
     {
-        return $this->getModule()->getExtraPath(
-            $this->repository->config('paths.generator.assets')
-        );
+        return $this->getModule()->getExtraPath($this->getDefaultNamespace());
+    }
+
+    /**
+     * Get default namespace.
+     *
+     * @return string
+     */
+    public function getDefaultNamespace()
+    {
+        return $this->laravel['modules']->config('paths.generator.asset', 'Resources/assets');
     }
 }

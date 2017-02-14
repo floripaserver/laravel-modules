@@ -79,9 +79,7 @@ class MakeCommandCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $seederPath = $this->laravel['modules']->config('paths.generator.command');
-
-        return $path . $seederPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -107,6 +105,6 @@ class MakeCommandCommand extends BaseCommand
      */
     public function getDefaultNamespace()
     {
-        return 'Console';
+        return $this->laravel['modules']->config('paths.generator.command', 'Console');
     }
 }

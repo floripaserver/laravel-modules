@@ -70,9 +70,7 @@ class MakeRequestCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $seederPath = $this->laravel['modules']->config('paths.generator.request');
-
-        return $path . $seederPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -90,6 +88,6 @@ class MakeRequestCommand extends BaseCommand
      */
     public function getDefaultNamespace()
     {
-        return 'Http\Requests';
+        return $this->laravel['modules']->config('paths.generator.request', 'Http/Requests');
     }
 }

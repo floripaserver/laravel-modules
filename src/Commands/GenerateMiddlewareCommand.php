@@ -70,9 +70,7 @@ class GenerateMiddlewareCommand extends BaseCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $seederPath = $this->laravel['modules']->config('paths.generator.middleware');
-
-        return $path . $seederPath . '/' . $this->getFileName() . '.php';
+        return $path . $this->getDefaultNamespace() . '/' . $this->getFileName() . '.php';
     }
 
     /**
@@ -90,6 +88,6 @@ class GenerateMiddlewareCommand extends BaseCommand
      */
     public function getDefaultNamespace()
     {
-        return 'Http\Middleware';
+        return $this->laravel['modules']->config('paths.generator.middleware', 'Http/Middleware');
     }
 }
