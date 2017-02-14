@@ -16,7 +16,7 @@ class GenerateRouteProviderCommand extends BaseCommand
      *
      * @var string
      */
-    protected $argumentName = 'name';
+    protected $argumentName = 'module';
 
     /**
      * The command name.
