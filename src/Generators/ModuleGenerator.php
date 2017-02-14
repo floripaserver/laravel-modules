@@ -323,8 +323,7 @@ class ModuleGenerator extends Generator
      */
     protected function getReplacement($stub)
     {
-        $replacements = $this->module->config('stubs.replacements');
-
+        $replacements = $this->getReplacements();
         if (!isset($replacements[$stub])) {
             return [];
         }

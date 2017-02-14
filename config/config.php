@@ -28,7 +28,7 @@ return [
         'files' => [
             'routes/web' => 'Routes/web.php',
             'routes/api' => 'Routes/api.php',
-            'json' => 'module.json',
+            'module' => 'module.json',
             'views/index' => 'Resources/views/index.blade.php',
             'views/master' => 'Resources/views/layouts/master.blade.php',
             'scaffold/config' => 'Config/config.php',
@@ -37,7 +37,7 @@ return [
         'replacements' => [
             'start' => ['LOWER_NAME'],
             'routes' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
-            'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
+            'module' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
             'views/index' => ['LOWER_NAME'],
             'views/master' => ['STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
