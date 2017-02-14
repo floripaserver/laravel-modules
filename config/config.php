@@ -123,7 +123,8 @@ return [
             'test' => 'Tests',
             'jobs' => 'Jobs',
             'emails' => 'Emails',
-            'notifications' => 'Notifications'
+            'notifications' => 'Notifications',
+            'routes' => 'Routes'
         ]
     ],
     /*
