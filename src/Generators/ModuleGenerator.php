@@ -19,13 +19,6 @@ class ModuleGenerator extends Generator
     protected $name;
 
     /**
-     * The laravel config instance.
-     *
-     * @var Config
-     */
-    protected $config;
-
-    /**
      * The laravel filesystem instance.
      *
      * @var Filesystem
@@ -63,24 +56,10 @@ class ModuleGenerator extends Generator
     /**
      * The constructor.
      *
-     * @param $name
-     * @param Repository $module
-     * @param Config     $config
-     * @param Filesystem $filesystem
-     * @param Console    $console
+     * @param string $name
      */
-    public function __construct(
-        $name,
-        Repository $module = null,
-        Config $config = null,
-        Filesystem $filesystem = null,
-        Console $console = null
-    ) {
+    public function __construct($name) {
         $this->name = $name;
-        $this->config = $config;
-        $this->filesystem = $filesystem;
-        $this->console = $console;
-        $this->module = $module;
     }
 
     /**
@@ -105,30 +84,6 @@ class ModuleGenerator extends Generator
     public function getName()
     {
         return Str::studly($this->name);
-    }
-
-    /**
-     * Get the laravel config instance.
-     *
-     * @return Config
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
-    /**
-     * Set the laravel config instance.
-     *
-     * @param Config $config
-     *
-     * @return $this
-     */
-    public function setConfig($config)
-    {
-        $this->config = $config;
-
-        return $this;
     }
 
     /**
@@ -315,18 +270,24 @@ class ModuleGenerator extends Generator
         $this->console->call('module:make-seeder', [
             'name' => $this->getName(),
             'module' => $this->getName(),
-            '--master' => true,
+            '--master' => true
         ]);
 
         $this->console->call('module:make-provider', [
             'name' => $this->getName() . 'ServiceProvider',
             'module' => $this->getName(),
-            '--master' => true,
+            '--plain' => false
+        ]);
+
+        $this->console->call('module:make-route', [
+            'name' => $this->getName() . 'RouteServiceProvider',
+            'module' => $this->getName(),
+            '--plain' => false
         ]);
 
         $this->console->call('module:make-controller', [
             'controller' => $this->getName() . 'Controller',
-            'module' => $this->getName(),
+            'module' => $this->getName()
         ]);
     }
 

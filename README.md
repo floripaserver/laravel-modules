@@ -64,7 +64,7 @@ Next, add the following aliases to `aliases` array in the same file.
 Next publish the package's configuration file by running :
 
 ```
-php artisan vendor:publish --provider="Llama\Modules\ServiceProvider"
+php artisan vendor:publish --provider="Llama\Modules\ModuleServiceProvider"
 ```
 
 #### Autoloading
@@ -154,7 +154,6 @@ your-laravel/app/Modules/
           ├── Controllers/
           ├── Middleware/
           ├── Requests/
-          ├── routes.php
       ├── Jobs/
       ├── Models/
       ├── Notifications/
@@ -164,6 +163,9 @@ your-laravel/app/Modules/
           ├── assets/
           ├── lang/
           ├── views/
+      ├── Routes/
+          ├── web.php
+          ├── api.php
       ├── Tests/
       ├── composer.json
       ├── module.json
@@ -301,6 +303,12 @@ Create new service provider for the specified module.
 
 ```
 php artisan module:make-provider MyServiceProvider blog
+```
+
+Create new route provider for the specified module.
+
+```
+php artisan module:make-route MyRouteServiceProvider blog
 ```
 
 Publish migration for the specified module or for all modules.

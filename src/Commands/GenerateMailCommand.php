@@ -5,9 +5,8 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command;
 
-class GenerateMailCommand extends Command
+class GenerateMailCommand extends BaseCommand
 {
     use ModuleCommandTrait;
 

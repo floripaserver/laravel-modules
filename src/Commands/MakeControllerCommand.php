@@ -6,9 +6,8 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command;
 
-class MakeControllerCommand extends Command
+class MakeControllerCommand extends BaseCommand
 {
     use ModuleCommandTrait;
 

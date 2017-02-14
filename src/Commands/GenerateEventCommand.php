@@ -6,9 +6,8 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command;
 
-class GenerateEventCommand extends Command
+class GenerateEventCommand extends GeneratorCommand
 {
     use ModuleCommandTrait;
 
@@ -58,7 +57,7 @@ class GenerateEventCommand extends Command
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub('/event.stub', [
-            'NAMESPACE' => $this->getClassNamespace($module) . "\\" . config('modules.paths.generator.event'),
+            'NAMESPACE' => $this->getClassNamespace($module) . "\\" . $this->laravel['modules']->config('paths.generator.event'),
             "CLASS" => $this->getClass(),
             'DUMMYNAMESPACE' => $this->laravel->getNamespace() . 'Events',
         ]))->render();

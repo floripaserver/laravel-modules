@@ -5,9 +5,9 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Generators\ModuleGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class MakeCommand extends BaseCommand
+class MakeCommand extends Command
 {
     /**
      * The console command name.
@@ -36,7 +36,6 @@ class MakeCommand extends BaseCommand
             with(new ModuleGenerator($name))
                 ->setFilesystem($this->laravel['files'])
                 ->setModule($this->laravel['modules'])
-                ->setConfig($this->laravel['config'])
                 ->setConsole($this)
                 ->setForce($this->option('force'))
                 ->setPlain($this->option('plain'))

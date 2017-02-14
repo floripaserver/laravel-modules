@@ -7,9 +7,8 @@ use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command;
 
-class GenerateProviderCommand extends Command
+class GenerateProviderCommand extends BaseCommand
 {
     use ModuleCommandTrait;
 
@@ -35,16 +34,16 @@ class GenerateProviderCommand extends Command
     protected $description = 'Generate a new service provider for the specified module.';
 
     /**
-     * Get the console command arguments.
+     * The command arguments.
      *
      * @return array
      */
     protected function getArguments()
     {
-        return array(
-            array('name', InputArgument::REQUIRED, 'The service provider name.'),
-            array('module', InputArgument::OPTIONAL, 'The name of module will be used.'),
-        );
+        return [
+        	['name', InputArgument::REQUIRED, 'The master service provider name.'],
+            ['module', InputArgument::OPTIONAL, 'The name of module will be used.'],
+        ];
     }
 
     /**
@@ -54,9 +53,9 @@ class GenerateProviderCommand extends Command
      */
     protected function getOptions()
     {
-        return array(
-            array('master', null, InputOption::VALUE_NONE, 'Indicates the master service provider', null),
-        );
+        return [
+        	['plain', 'p', InputOption::VALUE_NONE, 'Indicates a plain master service provider', null]
+        ];
     }
 
     /**
@@ -64,7 +63,7 @@ class GenerateProviderCommand extends Command
      */
     protected function getTemplateContents()
     {
-        $stub = $this->option('master') ? 'scaffold/provider' : 'provider';
+        $stub = $this->option('plain') ? 'master-provider' : 'scaffold/master-provider';
 
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
@@ -76,9 +75,9 @@ class GenerateProviderCommand extends Command
             'NAME'              => $this->getFileName(),
             'STUDLY_NAME'       => $module->getStudlyName(),
             'MODULE_NAMESPACE'  => $this->laravel['modules']->config('namespace'),
-            'PATH_VIEWS'        => $this->laravel['config']->get('modules.paths.generator.views'),
-            'PATH_LANG'         => $this->laravel['config']->get('modules.paths.generator.lang'),
-            'PATH_CONFIG'       => $this->laravel['config']->get('modules.paths.generator.config'),
+            'PATH_VIEWS'        => $this->laravel['modules']->config('paths.generator.views'),
+            'PATH_LANG'         => $this->laravel['modules']->config('paths.generator.lang'),
+            'PATH_CONFIG'       => $this->laravel['modules']->config('paths.generator.config'),
         ]))->render();
     }
 

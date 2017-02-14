@@ -5,9 +5,8 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command;
 
-final class GenerateNotificationCommand extends Command
+final class GenerateNotificationCommand extends BaseCommand
 {
     use ModuleCommandTrait;
 

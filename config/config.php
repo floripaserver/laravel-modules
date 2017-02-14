@@ -26,8 +26,8 @@ return [
         'enabled' => false,
         'path' => base_path(__DIR__ . '/../src/Commands/stubs'),
         'files' => [
-            'start' => 'start.php',
-            'routes' => 'Http/routes.php',
+            'routes/web' => 'Routes/web.php',
+            'routes/api' => 'Routes/api.php',
             'json' => 'module.json',
             'views/index' => 'Resources/views/index.blade.php',
             'views/master' => 'Resources/views/layouts/master.blade.php',

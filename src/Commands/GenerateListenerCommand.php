@@ -104,11 +104,11 @@ class GenerateListenerCommand extends GeneratorCommand
 
     protected function getEventName(Module $module)
     {
-        return $this->getClassNamespace($module) . "\\" . config('modules.paths.generator.event') . "\\" . $this->option('event');
+        return $this->getClassNamespace($module) . "\\" . $this->laravel['modules']->config('paths.generator.event') . "\\" . $this->option('event');
     }
 
     protected function getNamespace($module)
     {
-        return $this->getClassNamespace($module) . "\\" . str_replace('/', '\\', config('modules.paths.generator.listener'));
+        return $this->getClassNamespace($module) . "\\" . str_replace('/', '\\', $this->laravel['modules']->config('paths.generator.listener'));
     }
 }

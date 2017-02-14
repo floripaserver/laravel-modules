@@ -65,9 +65,9 @@ class ModuleServiceProvider extends ServiceProvider
     protected function registerNamespaces()
     {
         $configPath = __DIR__ . '/../config/config.php';
-        $this->mergeConfigFrom($configPath, 'modules');
+        $this->mergeConfigFrom($configPath, 'llama.modules');
         $this->publishes([
-            $configPath => config_path('modules.php'),
+            $configPath => config_path('llama/modules.php'),
         ], 'config');
     }
 
@@ -77,9 +77,7 @@ class ModuleServiceProvider extends ServiceProvider
     protected function registerServices()
     {
         $this->app->singleton('modules', function ($app) {
-            $path = $app['config']->get('modules.paths.modules');
-
-            return new Repository($app, $path);
+            return new Repository($app, $app['config']->get('llama.modules.paths.modules'));
         });
     }
 

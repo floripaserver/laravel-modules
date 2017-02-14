@@ -5,19 +5,19 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputOption;
 
-class GenerateRouteProviderCommand extends Command
+class GenerateRouteProviderCommand extends BaseCommand
 {
     use ModuleCommandTrait;
 
-    protected $argumentName = 'module';
+    protected $argumentName = 'name';
     /**
      * The command name.
      *
      * @var string
      */
-    protected $name = 'module:route-provider';
+    protected $name = 'module:make-route';
 
     /**
      * The command description.
@@ -33,9 +33,22 @@ class GenerateRouteProviderCommand extends Command
      */
     protected function getArguments()
     {
-        return array(
-            array('module', InputArgument::OPTIONAL, 'The name of module will be used.'),
-        );
+        return [
+        	['name', InputArgument::REQUIRED, 'The route service provider name.'],
+            ['module', InputArgument::OPTIONAL, 'The name of module will be used.'],
+        ];
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+        	['plain', 'p', InputOption::VALUE_NONE, 'Indicates a plain route service provider', null]
+        ];
     }
 
     /**
@@ -45,9 +58,11 @@ class GenerateRouteProviderCommand extends Command
      */
     protected function getTemplateContents()
     {
+    	$stub = $this->option('plain') ? 'route-provider' : 'scaffold/route-provider';
+    	
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
-        return (new Stub('/route-provider.stub', [
+        return (new Stub('/' . $stub . '.stub', [
             'NAMESPACE'         => $this->getClassNamespace($module),
             'CLASS'             => $this->getClass(),
             'LOWER_NAME'        => $module->getLowerName(),

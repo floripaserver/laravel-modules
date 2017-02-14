@@ -6,9 +6,8 @@ use Illuminate\Support\Str;
 use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command;
 
-class MakeRequestCommand extends Command
+class MakeRequestCommand extends BaseCommand
 {
     use ModuleCommandTrait;
 
