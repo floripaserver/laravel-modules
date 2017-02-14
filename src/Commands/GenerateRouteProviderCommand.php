@@ -10,6 +10,13 @@ use Symfony\Component\Console\Input\InputOption;
 class GenerateRouteProviderCommand extends BaseCommand
 {
     use ModuleCommandTrait;
+    
+    /**
+     * The name of 'name' argument.
+     *
+     * @var string
+     */
+    protected $argumentName = 'name';
 
     /**
      * The command name.
