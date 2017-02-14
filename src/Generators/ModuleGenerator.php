@@ -6,7 +6,6 @@ use Illuminate\Config\Repository as Config;
 use Illuminate\Console\Command as Console;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
-use Llama\Modules\Repository;
 use Llama\Modules\Support\Stub;
 
 class ModuleGenerator extends Generator
@@ -127,7 +126,7 @@ class ModuleGenerator extends Generator
      *
      * @return $this
      */
-    public function setConsole($console)
+    public function setConsole(Console $console)
     {
         $this->console = $console;
 

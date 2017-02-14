@@ -5,9 +5,9 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Module;
 use Llama\Modules\Publishing\AssetPublisher;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class PublishAssetCommand extends BaseCommand
+class PublishAssetCommand extends Command
 {
     /**
      * The console command name.

@@ -121,7 +121,7 @@ class Repository implements RepositoryInterface, Countable
             is_array($manifests) || $manifests = [];
 
             foreach ($manifests as $manifest) {
-                $name = Json::make($manifest)->get('name');
+                $name = Json::make($this->laravel, $manifest)->get('name');
 
                 $modules[$name] = new Module($this->laravel, $name, dirname($manifest));
             }

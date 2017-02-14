@@ -5,9 +5,9 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class MigrateRefreshCommand extends BaseCommand
+class MigrateRefreshCommand extends Command
 {
     use ModuleCommandTrait;
 

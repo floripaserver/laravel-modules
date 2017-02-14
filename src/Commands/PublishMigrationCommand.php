@@ -5,9 +5,9 @@ namespace Llama\Modules\Commands;
 use Llama\Modules\Migrations\Migrator;
 use Llama\Modules\Publishing\MigrationPublisher;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class PublishMigrationCommand extends BaseCommand
+class PublishMigrationCommand extends Command
 {
     /**
      * The console command name.

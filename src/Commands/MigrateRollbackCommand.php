@@ -6,9 +6,9 @@ use Llama\Modules\Migrations\Migrator;
 use Llama\Modules\Traits\MigrationLoaderTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class MigrateRollbackCommand extends BaseCommand
+class MigrateRollbackCommand extends Command
 {
     use MigrationLoaderTrait;
 

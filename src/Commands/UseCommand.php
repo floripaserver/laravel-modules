@@ -4,9 +4,9 @@ namespace Llama\Modules\Commands;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class UseCommand extends BaseCommand
+class UseCommand extends Command
 {
     /**
      * The console command name.

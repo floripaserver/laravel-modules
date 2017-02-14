@@ -9,9 +9,9 @@ use Llama\Modules\Repository;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class SeedCommand extends BaseCommand
+class SeedCommand extends Command
 {
     use ModuleCommandTrait;
 

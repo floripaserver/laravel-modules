@@ -6,9 +6,9 @@ use Llama\Modules\Json;
 use Llama\Modules\Process\Installer;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class InstallCommand extends BaseCommand
+class InstallCommand extends Command
 {
     /**
      * The console command name.
@@ -23,14 +23,6 @@ class InstallCommand extends BaseCommand
      * @var string
      */
     protected $description = 'Install the specified module by given package name (vendor/name).';
-
-    /**
-     * Create a new command instance.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.
@@ -64,8 +56,7 @@ class InstallCommand extends BaseCommand
             return;
         }
 
-        $modules = Json::make($path);
-
+        $modules = Json::make($this->laravel, $path);
         $dependencies = $modules->get('require', []);
 
         foreach ($dependencies as $module) {

@@ -4,9 +4,9 @@ namespace Llama\Modules\Commands;
 
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Console\Command as BaseCommand;
+use Illuminate\Console\Command;
 
-class UpdateCommand extends BaseCommand
+class UpdateCommand extends Command
 {
     use ModuleCommandTrait;
 
