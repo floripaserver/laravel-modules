@@ -128,11 +128,11 @@ class Json
      */
     public function getAttributes()
     {
-        if (this->laravel['modules']->config('cache.enabled') === false) {
+        if ($this->laravel['modules']->config('cache.enabled') === false) {
             return json_decode($this->getContents(), 1);
         }
 
-        return app('cache')->remember($this->getPath(), this->laravel['modules']->config('cache.lifetime'), function () {
+        return app('cache')->remember($this->getPath(), $this->laravel['modules']->config('cache.lifetime'), function () {
             return json_decode($this->getContents(), 1);
         });
     }

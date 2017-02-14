@@ -143,7 +143,7 @@ class Module extends ServiceProvider
      */
     public function boot()
     {
-        if (this->app['modules']->config('register.translations', true) === true) {
+        if ($this->app['modules']->config('register.translations', true) === true) {
             $this->registerTranslation();
         }
 
