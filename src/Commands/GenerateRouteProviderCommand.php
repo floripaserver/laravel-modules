@@ -35,7 +35,6 @@ class GenerateRouteProviderCommand extends BaseCommand
     protected function getArguments()
     {
         return [
-        	['name', InputArgument::REQUIRED, 'The route service provider name.'],
             ['module', InputArgument::OPTIONAL, 'The name of module will be used.'],
         ];
     }
@@ -92,7 +91,7 @@ class GenerateRouteProviderCommand extends BaseCommand
      */
     private function getFileName()
     {
-        return Str::studly($this->argument('name'));
+        return $this->getModuleName() . 'RouteServiceProvider';
     }
 
     /**
