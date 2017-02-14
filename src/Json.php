@@ -101,14 +101,15 @@ class Json
     /**
      * Make new instance.
      *
-     * @param string                            $path
+     * @param Application $laravel
+     * @param string $path
      * @param Filesystem $filesystem
      *
      * @return static
      */
-    public static function make($path, Filesystem $filesystem = null)
+    public static function make(Application $laravel, $path, Filesystem $filesystem = null)
     {
-        return new static($path, $filesystem);
+        return new static($laravel, $path, $filesystem);
     }
 
     /**
