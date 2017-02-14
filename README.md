@@ -308,7 +308,7 @@ php artisan module:make-provider MyServiceProvider blog
 Create new route provider for the specified module.
 
 ```
-php artisan module:make-route MyRouteServiceProvider blog
+php artisan module:make-route blog
 ```
 
 Publish migration for the specified module or for all modules.
