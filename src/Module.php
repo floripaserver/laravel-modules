@@ -257,7 +257,7 @@ class Module extends ServiceProvider
     protected function registerFiles()
     {
         foreach ($this->get('files', []) as $file) {
-            include $this->path . '/' . $file;
+            $this->app['files']->requireOnce($this->path . '/' . $file);
         }
     }
 
