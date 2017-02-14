@@ -3,7 +3,6 @@
 namespace Llama\Modules\Commands;
 
 use Illuminate\Support\Str;
-use RuntimeException;
 use Llama\Modules\Module;
 use Llama\Modules\Repository;
 use Llama\Modules\Traits\ModuleCommandTrait;
@@ -51,7 +50,7 @@ class SeedCommand extends Command
     }
 
     /**
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
      * @return Repository
      */
@@ -59,7 +58,7 @@ class SeedCommand extends Command
     {
         $modules = $this->laravel['modules'];
         if (!$modules instanceof Repository) {
-            throw new RuntimeException("Module repository not found!");
+            throw new \RuntimeException("Module repository not found!");
         }
         return $modules;
     }
@@ -67,7 +66,7 @@ class SeedCommand extends Command
     /**
      * @param $name
      *
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
      * @return Module
      */
@@ -75,7 +74,7 @@ class SeedCommand extends Command
     {
         $modules = $this->getModuleRepository();
         if ($modules->has($name) === false) {
-            throw new RuntimeException("Module [$name] does not exists.");
+            throw new \RuntimeException("Module [$name] does not exists.");
         }
 
         return $modules->get($name);
