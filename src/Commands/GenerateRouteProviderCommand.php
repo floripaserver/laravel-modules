@@ -2,7 +2,6 @@
 
 namespace Llama\Modules\Commands;
 
-use Illuminate\Support\Str;
 use Llama\Modules\Support\Stub;
 use Llama\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
@@ -12,7 +11,6 @@ class GenerateRouteProviderCommand extends BaseCommand
 {
     use ModuleCommandTrait;
 
-    protected $argumentName = 'name';
     /**
      * The command name.
      *
