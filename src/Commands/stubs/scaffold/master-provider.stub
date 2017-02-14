@@ -59,7 +59,7 @@ class $CLASS$ extends ServiceProvider
     {
         $viewPath = base_path('resources/views/modules/$LOWER_NAME$');
 
-        $sourcePath = __DIR__.'/../$PATH_VIEWS$';
+        $sourcePath = __DIR__.'/../$PATH_VIEW$';
 
         $this->publishes([
             $sourcePath => $viewPath

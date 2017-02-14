@@ -70,6 +70,7 @@ class GenerateRouteProviderCommand extends BaseCommand
             'NAME'              => $this->getFileName(),
             'STUDLY_NAME'       => $module->getStudlyName(),
             'MODULE_NAMESPACE'  => $this->laravel['modules']->config('namespace'),
+            'PATH_ROUTE'        => $this->laravel['modules']->config('paths.generator.route')
         ]))->render();
     }
 

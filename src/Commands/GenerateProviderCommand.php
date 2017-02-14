@@ -75,9 +75,9 @@ class GenerateProviderCommand extends BaseCommand
             'NAME'              => $this->getFileName(),
             'STUDLY_NAME'       => $module->getStudlyName(),
             'MODULE_NAMESPACE'  => $this->laravel['modules']->config('namespace'),
-            'PATH_VIEWS'        => $this->laravel['modules']->config('paths.generator.view'),
+            'PATH_VIEW'        => $this->laravel['modules']->config('paths.generator.view'),
             'PATH_LANG'         => $this->laravel['modules']->config('paths.generator.lang'),
-            'PATH_CONFIG'       => $this->laravel['modules']->config('paths.generator.config'),
+            'PATH_CONFIG'       => $this->laravel['modules']->config('paths.generator.config')
         ]))->render();
     }
 
