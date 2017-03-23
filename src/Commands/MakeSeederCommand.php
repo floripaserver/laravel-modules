@@ -94,18 +94,6 @@ class MakeSeederCommand extends BaseCommand
     }
 
     /**
-     * Get class namespace.
-     *
-     * @param \Llama\Modules\Module $module
-     *
-     * @return string
-     */
-    public function getClassNamespace($module)
-    {
-        return parent::getClassNamespace($module) . '\\' . trim(str_replace('/', '\\', $this->getDefaultNamespace()), '\\');
-    }
-
-    /**
      * Get default namespace.
      *
      * @return string
