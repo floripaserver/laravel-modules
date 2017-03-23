@@ -81,17 +81,11 @@ abstract class BaseCommand extends Command
     public function getClassNamespace($module)
     {
         $extra = str_replace($this->getClass(), '', $this->argument($this->argumentName));
-
-        $extra = str_replace('/', '\\', $extra);
-
         $namespace = $this->laravel['modules']->config('namespace');
-
         $namespace .= '\\' . $module->getStudlyName();
-
         $namespace .= '\\' . $this->getDefaultNamespace();
-
         $namespace .= '\\' . $extra;
 
-        return trim($namespace, '\\');
+        return trim(str_replace('/', '\\', $namespace), '\\');
     }
 }
